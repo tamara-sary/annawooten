@@ -1,0 +1,58 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # ── Homepage Content ──
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Homepage"
+        name: "homepage"
+        file: "src/content/homepage.json"
+        fields:
+          # Hero Section
+          - label: "Hero Section"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Tagline", name: "tagline", widget: "string", default: "Welcome" }
+              - { label: "Heading", name: "heading", widget: "string", default: "Your journey to wellness starts here" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Button Text", name: "button_text", widget: "string", default: "Explore Sessions" }
+
+          # About Section
+          - label: "About Section"
+            name: "about"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", default: "Hi, I'm Anna" }
+              - { label: "Bio", name: "bio", widget: "markdown" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+          # Contact Section
+          - label: "Contact Section"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string", default: "Ready to start?" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Button Text", name: "button_text", widget: "string", default: "Send me an email" }
+
+  # ── Sessions / Services ──
+  - name: "sessions"
+    label: "Sessions"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 60 min, 4 weeks" }
+      - { label: "Price", name: "price", widget: "string", hint: "e.g. €80" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Highlight this session" }
+      - { label: "Order", name: "order", widget: "number", default: 0, hint: "Display order (lower = first)" }

@@ -1,0 +1,19 @@
+{
+  "hero": {
+    "tagline": "Welcome",
+    "heading": "Your journey to wellness starts here",
+    "description": "Personalized sessions designed to help you reconnect with yourself and find balance in your everyday life.",
+    "button_text": "Explore Sessions"
+  },
+  "about": {
+    "heading": "Hi, I'm Anna",
+    "bio": "This is a placeholder for Anna's bio. She can edit this text directly from the CMS admin panel — no coding needed.\n\nAdd your story, your approach, what makes your sessions unique, and why clients love working with you.",
+    "photo": ""
+  },
+  "contact": {
+    "heading": "Ready to start?",
+    "description": "Reach out to book a session or ask any questions. I'd love to hear from you.",
+    "email": "hello@annawooten.com",
+    "button_text": "Send me an email"
+  }
+}
