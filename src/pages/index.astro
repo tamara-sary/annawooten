@@ -1,106 +1,205 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const CALENDLY = 'https://calendly.com/annawootenofficial';
 ---
 
-<BaseLayout title="Anna Wooten — Sessions & Wellness">
+<BaseLayout title="Anna Wooten — Integrative Wellness & Transformation">
 
-  <!-- Navigation -->
   <nav class="nav">
     <a href="/" class="nav-logo">Anna Wooten</a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#sessions">Sessions</a>
-      <a href="#contact">Contact</a>
+      <a href="/about">About</a>
+      <a href="/work-with-me">Work With Me</a>
+      <a href="/classes">Classes</a>
+      <a href="/products">Products</a>
+      <a href="/events">Events</a>
     </div>
-    <a href="#contact" class="nav-cta">Book a Session</a>
+    <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="nav-cta">Book a Consultation</a>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-tag">Wellness &amp; Personal Sessions</p>
-      <h1>Your journey to<br /><em>wellness</em> starts here</h1>
-      <p class="hero-description">
-        Personalized sessions designed to help you reconnect with yourself
-        and find balance in your everyday life.
+    <div class="hero-inner">
+      <p class="section-tag">Integrative Wellness &amp; Transformation</p>
+      <h1>Reconnect with yourself.<br /><em>Create lasting change.</em></h1>
+      <p class="hero-desc">
+        Personalized work with the subconscious mind, nervous system, and deeper self —
+        supporting women who are ready for meaningful internal transformation.
       </p>
-      <div class="hero-buttons">
-        <a href="#sessions" class="btn btn-gold">Explore Sessions</a>
-        <a href="#about" class="btn btn-outline">Meet Anna</a>
+      <div class="hero-btns">
+        <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="btn btn-gold">Book a Free Consultation</a>
+        <a href="/about" class="btn btn-outline">Meet Anna</a>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section id="about" class="about">
+  <!-- About Teaser -->
+  <section class="about-teaser">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-image-wrap">
-          <img src="/anna.jpg" alt="Anna Wooten" class="about-photo" />
+      <div class="about-teaser-grid">
+        <div class="about-teaser-img">
+          <img src="/anna.jpg" alt="Anna Wooten" />
         </div>
-        <div class="about-text">
+        <div class="about-teaser-text">
           <p class="section-tag">About the Guide</p>
-          <h2>Hi, I'm Anna</h2>
+          <h2>Anna Wooten</h2>
           <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
           <p>
-            This is a placeholder for Anna's bio. She can edit this text directly
-            from the CMS admin panel — no coding needed.
+            Anna is an integrative practitioner, coach, and facilitator working at the intersection
+            of the nervous system, the subconscious mind, and personal transformation. Her work
+            blends breathwork, hypnosis, Reiki, sound healing, and intuitive guidance to support
+            women in creating deep and lasting internal change.
           </p>
-          <p>
-            Add your story, your approach, what makes your sessions unique,
-            and why clients love working with you.
-          </p>
-          <a href="#contact" class="btn btn-gold" style="margin-top: 2rem;">Work With Me</a>
+          <p>Anna is currently a graduate student in Clinical Mental Health Counseling at Naropa University.</p>
+          <a href="/about" class="btn btn-outline" style="margin-top: 1.8rem;">Read Anna's Story</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sessions -->
-  <section id="sessions" class="sessions">
+  <!-- 1:1 Package Feature -->
+  <section class="feature-section">
     <div class="container">
-      <p class="section-tag center">What I Offer</p>
-      <h2 class="section-title">Sessions</h2>
-      <div class="sessions-grid">
-        <div class="session-card">
-          <span class="session-duration">60 min</span>
-          <h3>Individual Session</h3>
-          <p>One-on-one personalized session tailored to your needs and goals.</p>
-          <div class="session-price">&#8364;80</div>
-          <a href="#contact" class="btn btn-outline">Book Now</a>
+      <div class="feature-inner">
+        <p class="section-tag center">Primary Offering</p>
+        <h2 class="section-title center">1:1 Transformation</h2>
+        <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+        <p class="feature-desc">
+          A personalized three-month container for women who want focused support and meaningful
+          internal change. We work with the mind, body, and deeper intuitive layers of the self —
+          exploring patterns, building awareness, and integrating new ways of relating to yourself.
+        </p>
+        <div class="feature-pillars">
+          <div class="pillar">
+            <span class="pillar-icon">&#10024;</span>
+            <h4>Support Your Mind</h4>
+            <p>Hypnosis &amp; meditation to access subconscious beliefs and emotional patterns</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">&#10024;</span>
+            <h4>Support Your Body</h4>
+            <p>Breathwork &amp; Reiki to regulate the nervous system and release stored tension</p>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">&#10024;</span>
+            <h4>Support Your Soul</h4>
+            <p>Intuitive guidance &amp; coaching for deeper self-understanding and personal direction</p>
+          </div>
         </div>
-        <div class="session-card featured">
-          <span class="session-duration">90 min</span>
-          <h3>Deep Dive Session</h3>
-          <p>An extended session for deeper exploration and transformation.</p>
-          <div class="session-price">&#8364;120</div>
-          <a href="#contact" class="btn btn-gold">Book Now</a>
-        </div>
-        <div class="session-card">
-          <span class="session-duration">4 weeks</span>
-          <h3>Package Program</h3>
-          <p>A structured program with weekly sessions for lasting change.</p>
-          <div class="session-price">&#8364;280</div>
-          <a href="#contact" class="btn btn-outline">Book Now</a>
-        </div>
+        <p class="feature-detail">Sessions twice per month &bull; 60–75 minutes &bull; Three months</p>
+        <a href="/work-with-me" class="btn btn-gold">Learn More &amp; Apply</a>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
+  <!-- Classes Preview -->
+  <section class="preview-section">
     <div class="container">
-      <p class="section-tag center">Get in Touch</p>
-      <h2 class="section-title">Ready to start?</h2>
-      <div class="divider center-divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-      <p class="contact-text">
-        Reach out to book a session or ask any questions. I'd love to hear from you.
+      <p class="section-tag center">Live Online</p>
+      <h2 class="section-title center">Group Classes</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <div class="two-col">
+        <div class="preview-card">
+          <p class="card-tag">Every Tuesday &bull; 6:00–7:15 PM CST</p>
+          <h3>Transformative Breathwork</h3>
+          <p>Biodynamic breathwork and trauma release to regulate the nervous system and explore subconscious emotional patterns through conscious breathing.</p>
+          <p class="price-line">Drop-in <strong>$40</strong> &nbsp;&bull;&nbsp; Monthly <strong>$129</strong></p>
+          <a href="/classes" class="btn btn-outline">View Class Details</a>
+        </div>
+        <div class="preview-card">
+          <p class="card-tag">Every Tuesday &bull; 7:30–9:00 PM CST</p>
+          <h3>Women's Group</h3>
+          <p>A facilitated weekly space combining guided meditation, sensuality, empowerment, and reflective practices for deeper emotional awareness and connection.</p>
+          <p class="price-line">Monthly <strong>$149</strong></p>
+          <a href="/classes" class="btn btn-outline">View Class Details</a>
+        </div>
+      </div>
+      <p class="combo-note">&#10022; &nbsp; Attend both for <strong>$229/month</strong> — save $49</p>
+    </div>
+  </section>
+
+  <!-- Digital Products Preview -->
+  <section class="preview-section alt">
+    <div class="container">
+      <p class="section-tag center">Self-Guided Programs</p>
+      <h2 class="section-title center">Digital Products</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <p class="section-intro">
+        Hypnosis, sound healing, and reflective exercises designed to help you work with the
+        subconscious mind at your own pace — repeatable, deeply supportive, and designed for lasting change.
       </p>
-      <a href="mailto:hello@annawooten.com" class="btn btn-gold">Send me an email</a>
+      <div class="three-col">
+        <div class="product-card">
+          <h3>Body Transformation Program</h3>
+          <p>Subconscious patterns that influence habits, identity, and relationship with the body.</p>
+          <p class="price">$197</p>
+          <a href="/products" class="btn btn-outline">Learn More</a>
+        </div>
+        <div class="product-card featured-card">
+          <h3>Fertility Hypnosis Program</h3>
+          <p>Create a calm internal environment to support your fertility journey through relaxation and trust in the body.</p>
+          <p class="price">$297</p>
+          <a href="/products" class="btn btn-gold">Learn More</a>
+        </div>
+        <div class="product-card">
+          <h3>Connect to Your Higher Self</h3>
+          <p>Deeper self-awareness and connection with inner guidance through hypnosis and meditation.</p>
+          <p class="price">$197</p>
+          <a href="/products" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Events Teaser -->
+  <section class="preview-section">
+    <div class="container events-teaser">
+      <p class="section-tag center">Northwest Arkansas</p>
+      <h2 class="section-title center">In-Person Events</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <p class="section-intro">
+        Live experiences designed to support relaxation, nervous system regulation, and deeper
+        self-awareness. Anna has facilitated over 100 community events — from sound baths and
+        breathwork to women's retreats and corporate wellness experiences.
+      </p>
+      <div class="events-tags">
+        <span>Sound Bath</span><span>Breathwork</span><span>Women's Circles</span>
+        <span>Cacao Ceremonies</span><span>Guided Meditation</span><span>Private &amp; Corporate</span>
+      </div>
+      <a href="/events" class="btn btn-outline">View Events &amp; Inquire</a>
+    </div>
+  </section>
+
+  <!-- Modalities Strip -->
+  <section class="modalities">
+    <div class="container">
+      <p class="section-tag center">The Work</p>
+      <div class="modality-grid">
+        <div class="modality">&#9670; Hypnosis</div>
+        <div class="modality">&#9670; Breathwork</div>
+        <div class="modality">&#9670; Sound Healing</div>
+        <div class="modality">&#9670; Reiki</div>
+        <div class="modality">&#9670; Meditation</div>
+        <div class="modality">&#9670; Spiritual Guidance</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <p class="section-tag center">Begin Your Journey</p>
+      <h2 class="section-title center">Ready to explore?</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <p class="final-cta-text">
+        Schedule a free consultation to explore whether this work is right for you.
+        No commitment required — just a conversation.
+      </p>
+      <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="btn btn-gold">Book a Free Consultation</a>
+    </div>
+  </section>
+
   <footer class="footer">
     <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
   </footer>
@@ -108,312 +207,123 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  /* ── Nav ────────────────────────────────────────────── */
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.4rem 3rem;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(13, 10, 30, 0.78);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
-  }
-
-  .nav-logo {
-    font-family: var(--font-display);
-    font-size: 1.4rem;
-    letter-spacing: 0.03em;
-    color: var(--text);
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(240, 234, 222, 0.75);
-  }
-
-  .nav-links a:hover { color: var(--gold); transition: color 0.3s; }
-
-  .nav-cta {
-    padding: 0.55rem 1.4rem;
-    background: var(--gold);
-    color: var(--bg);
-    border-radius: 9999px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: opacity 0.3s;
-  }
-  .nav-cta:hover { opacity: 0.85; }
-
-  /* ── Hero ───────────────────────────────────────────── */
+  /* Hero */
   .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 7rem 3rem 4rem;
+    padding: 8rem 3rem 5rem;
   }
+  .hero-inner { max-width: 760px; }
+  .hero h1 { font-size: clamp(3rem, 6.5vw, 5rem); color: var(--text); margin-bottom: 1.5rem; }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-desc { font-size: 1.05rem; color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.9; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-  .hero-content { max-width: 720px; }
-
-  .hero-tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero h1 {
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    color: var(--text);
-    margin-bottom: 1.5rem;
-    line-height: 1.15;
-  }
-
-  .hero h1 em {
-    color: var(--gold);
-    font-style: italic;
-  }
-
-  .hero-description {
-    font-size: 1.05rem;
-    color: var(--muted);
-    max-width: 500px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.85;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* ── Buttons ────────────────────────────────────────── */
-  .btn {
-    display: inline-block;
-    padding: 0.85rem 2.2rem;
-    border-radius: 9999px;
-    font-family: var(--font-body);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  .btn-gold {
-    background: var(--gold);
-    color: var(--bg);
-    border: 1px solid var(--gold);
-  }
-  .btn-gold:hover { opacity: 0.85; }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--text);
-    border: 1px solid rgba(240, 234, 222, 0.35);
-  }
-  .btn-outline:hover {
-    border-color: var(--gold);
-    color: var(--gold);
-  }
-
-  /* ── Shared ─────────────────────────────────────────── */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 3rem;
-  }
-
-  .section-tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .section-tag.center { text-align: center; }
-
-  .section-title {
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    text-align: center;
-    color: var(--text);
-    margin-bottom: 3rem;
-  }
-
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 1.2rem 0 1.8rem;
-  }
-  .divider span:first-child,
-  .divider span:last-child {
-    flex: 1;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.4;
-    max-width: 60px;
-  }
-  .diamond { color: var(--gold); font-size: 0.9rem; }
-
-  .center-divider {
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-  .center-divider span:first-child,
-  .center-divider span:last-child { max-width: 80px; }
-
-  /* ── About ──────────────────────────────────────────── */
-  .about { padding: 9rem 0; }
-
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .about-image-wrap {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-
-  .about-image-wrap::before {
+  /* About teaser */
+  .about-teaser { padding: 8rem 0; }
+  .about-teaser-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; }
+  .about-teaser-img { position: relative; }
+  .about-teaser-img::before {
     content: '';
-    position: absolute;
-    inset: -6px;
+    position: absolute; inset: -6px;
     border-radius: 50% 50% 45% 45% / 48% 48% 40% 40%;
-    background: linear-gradient(160deg, rgba(201,168,76,0.35), rgba(160,80,240,0.25));
+    background: linear-gradient(160deg, rgba(232,150,10,0.3), rgba(160,80,240,0.22));
     z-index: 0;
   }
-
-  .about-photo {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    object-position: top;
+  .about-teaser-img img {
+    position: relative; z-index: 1;
+    width: 100%; aspect-ratio: 3/4;
+    object-fit: cover; object-position: top;
     border-radius: 50% 50% 45% 45% / 48% 48% 40% 40%;
-    box-shadow: 0 0 60px rgba(160, 80, 240, 0.3), 0 0 30px rgba(201, 168, 76, 0.15);
+    box-shadow: 0 0 60px rgba(160,80,240,0.3), 0 0 25px rgba(232,150,10,0.12);
   }
+  .about-teaser-text h2 { font-size: 2.8rem; margin-bottom: 0.25rem; }
+  .about-teaser-text p { color: var(--muted); margin-bottom: 1rem; line-height: 1.85; }
 
-  .about-text h2 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    color: var(--text);
-    margin-bottom: 0.25rem;
-  }
+  /* Feature section (1:1) */
+  .feature-section { padding: 8rem 0; }
+  .feature-inner { text-align: center; max-width: 820px; margin: 0 auto; }
+  .feature-desc { color: var(--muted); font-size: 1.05rem; line-height: 1.9; margin-bottom: 3rem; }
+  .feature-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2.5rem; text-align: left; }
+  .pillar { padding: 1.8rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--card); }
+  .pillar-icon { font-size: 1.2rem; color: var(--gold); display: block; margin-bottom: 0.8rem; }
+  .pillar h4 { font-family: var(--font-display); font-size: 1.2rem; color: var(--text); margin-bottom: 0.6rem; }
+  .pillar p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+  .feature-detail { font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 2rem; text-transform: uppercase; }
 
-  .about-text p {
-    color: var(--muted);
-    margin-bottom: 1rem;
-    line-height: 1.85;
-  }
+  /* Preview sections */
+  .preview-section { padding: 8rem 0; }
+  .preview-section.alt { background: rgba(255,255,255,0.015); }
+  .section-intro { color: var(--muted); font-size: 1rem; line-height: 1.85; max-width: 620px; margin: 0 auto 3rem; text-align: center; }
 
-  /* ── Sessions ───────────────────────────────────────── */
-  .sessions { padding: 9rem 0; }
-
-  .sessions-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .session-card {
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .preview-card {
+    padding: 2.5rem;
     border: 1px solid var(--card-border);
+    border-radius: 14px;
     background: var(--card);
-    text-align: center;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(6px);
     transition: border-color 0.3s, transform 0.3s;
   }
-  .session-card:hover {
-    border-color: var(--border);
-    transform: translateY(-4px);
-  }
+  .preview-card:hover { border-color: var(--border); transform: translateY(-3px); }
+  .card-tag { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .preview-card h3 { font-family: var(--font-display); font-size: 1.7rem; color: var(--text); margin-bottom: 0.9rem; }
+  .preview-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 1rem; }
+  .price-line { color: var(--text) !important; font-size: 0.88rem !important; }
+  .price-line strong { color: var(--gold); }
+  .combo-note { text-align: center; margin-top: 1.5rem; color: var(--muted); font-size: 0.88rem; }
+  .combo-note strong { color: var(--text); }
 
-  .session-card.featured {
-    border-color: rgba(201, 168, 76, 0.4);
-    background: rgba(201, 168, 76, 0.07);
-    box-shadow: 0 0 40px rgba(201, 168, 76, 0.1);
-  }
-
-  .session-duration {
-    font-size: 0.72rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gold);
-  }
-
-  .session-card h3 {
-    font-size: 1.6rem;
-    color: var(--text);
-    margin: 0.8rem 0;
-  }
-
-  .session-card p {
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.75;
-    margin-bottom: 1.5rem;
-  }
-
-  .session-price {
-    font-family: var(--font-display);
-    font-size: 2.2rem;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-
-  /* ── Contact ────────────────────────────────────────── */
-  .contact {
-    padding: 9rem 0;
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .product-card {
+    padding: 2.2rem;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    background: var(--card);
     text-align: center;
+    transition: border-color 0.3s, transform 0.3s;
   }
+  .product-card:hover { border-color: var(--border); transform: translateY(-3px); }
+  .product-card.featured-card { border-color: rgba(232,150,10,0.35); background: rgba(232,150,10,0.06); }
+  .product-card h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--text); margin-bottom: 0.8rem; }
+  .product-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+  .price { font-family: var(--font-display); font-size: 2rem; color: var(--gold); margin-bottom: 1.5rem; }
 
-  .contact-text {
-    color: var(--muted);
-    max-width: 460px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.85;
-  }
-
-  /* ── Footer ─────────────────────────────────────────── */
-  .footer {
-    padding: 2.5rem;
-    text-align: center;
+  /* Events */
+  .events-teaser { text-align: center; }
+  .events-tags { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin: 0 auto 2.5rem; max-width: 600px; }
+  .events-tags span {
+    padding: 0.4rem 1rem;
+    border: 1px solid rgba(232,150,10,0.25);
+    border-radius: 9999px;
     font-size: 0.78rem;
-    color: rgba(240, 234, 222, 0.35);
-    letter-spacing: 0.06em;
-    border-top: 1px solid rgba(201, 168, 76, 0.12);
+    letter-spacing: 0.08em;
+    color: var(--muted);
   }
 
-  /* ── Responsive ─────────────────────────────────────── */
+  /* Modalities */
+  .modalities { padding: 5rem 0; border-top: 1px solid rgba(232,150,10,0.08); border-bottom: 1px solid rgba(232,150,10,0.08); }
+  .modality-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 3rem; margin-top: 1.5rem; }
+  .modality { font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+
+  /* Final CTA */
+  .final-cta { padding: 9rem 0; text-align: center; }
+  .final-cta-text { color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; }
+
+  @media (max-width: 900px) {
+    .feature-pillars { grid-template-columns: 1fr; }
+    .three-col { grid-template-columns: 1fr; }
+  }
   @media (max-width: 768px) {
-    .nav { padding: 1.1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { padding: 6rem 1.5rem 3rem; }
-    .container { padding: 0 1.5rem; }
-    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .about-image-wrap { max-width: 300px; margin: 0 auto; }
-    .sessions-grid { grid-template-columns: 1fr; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .about-teaser { padding: 5rem 0; }
+    .about-teaser-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .two-col { grid-template-columns: 1fr; }
+    .preview-section { padding: 5rem 0; }
+    .feature-section { padding: 5rem 0; }
+    .final-cta { padding: 6rem 0; }
   }
 </style>
-
