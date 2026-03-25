@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const CALENDLY = 'https://calendly.com/annawootenofficial';
+const EMAIL = 'hello@annawooten.com';
+---
+<BaseLayout title="Events — Anna Wooten" description="In-person events in Northwest Arkansas: sound baths, breathwork, women's circles, and private experiences.">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Anna Wooten</a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/work-with-me">Work With Me</a>
+      <a href="/classes">Classes</a>
+      <a href="/products">Products</a>
+      <a href="/events" style="color: var(--gold)">Events</a>
+    </div>
+    <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="nav-cta">Book a Consultation</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-tag">Northwest Arkansas</p>
+    <h1>In-Person Events</h1>
+    <p>Live experiences designed to support relaxation, nervous system regulation, and deeper self-awareness. A chance to step away from daily life and reconnect.</p>
+  </div>
+
+  <!-- Upcoming -->
+  <section class="ev-section">
+    <div class="container">
+      <p class="section-tag">Upcoming</p>
+      <h2>Events &amp; Experiences</h2>
+      <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <div class="ev-coming">
+        <p>Upcoming events are announced through email and social media. Each event is unique — inquire below to be added to the list or ask about what's coming next.</p>
+        <a href={`mailto:${EMAIL}?subject=Events Inquiry`} class="btn btn-gold">Inquire About Upcoming Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="ev-section alt">
+    <div class="container">
+      <p class="section-tag">What to Expect</p>
+      <h2>Offerings</h2>
+      <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <div class="offerings-grid">
+        <div class="offering-card"><h4>Sound Bath</h4><p>Crystal bowls and resonant instruments create a deeply restorative and immersive listening experience.</p></div>
+        <div class="offering-card"><h4>Guided Breathwork</h4><p>Live guided breathwork with personalized healing music to support emotional and energetic release.</p></div>
+        <div class="offering-card"><h4>Women's Circles</h4><p>A facilitated gathering for reflection, conversation, meditation, and shared support.</p></div>
+        <div class="offering-card"><h4>Cacao Ceremonies</h4><p>A heart-centered gathering using ceremonial cacao, meditation, and guided reflection.</p></div>
+        <div class="offering-card"><h4>Breathwork &amp; Journaling</h4><p>Guided breathwork followed by reflective writing to process insights and emotions.</p></div>
+        <div class="offering-card"><h4>Somatic Experiences</h4><p>Immersive somatic and sound journeys for deepening sensory awareness and body connection.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Private -->
+  <section class="ev-section">
+    <div class="container">
+      <div class="private-inner">
+        <div>
+          <p class="section-tag">Private &amp; Corporate</p>
+          <h2>Private Experiences</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>Private experiences are available for small groups, executive teams, and organizations seeking a restorative or reflective experience. These can be designed as private workshops, leadership reset sessions, or retreat-style experiences that support mental clarity, stress regulation, and deeper connection.</p>
+          <p>Past private work has included women's retreats, men's retreat breathwork, corporate wellness, and multi-hour immersive experiences.</p>
+          <a href={`mailto:${EMAIL}?subject=Private Event Inquiry`} class="btn btn-gold" style="margin-top:1.5rem">Inquire About Private Bookings</a>
+        </div>
+        <div class="past-events">
+          <p class="section-tag">Past Events</p>
+          <p class="past-count">100+</p>
+          <p class="past-label">Community events, workshops &amp; retreats facilitated</p>
+          <div class="past-list">
+            <span>Emotional Alchemy Series</span>
+            <span>Surrendered: Sensory Immersion</span>
+            <span>Double Sound Bath Experiences</span>
+            <span>Deep Rest: Restorative Yoga &amp; Reiki</span>
+            <span>Acupuncture &amp; Sound Bath: The Reset</span>
+            <span>Women's Day Retreats</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .ev-section { padding: 7rem 0; }
+  .ev-section.alt { background: rgba(255,255,255,0.02); }
+  .ev-section h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.25rem; }
+  .ev-section p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+
+  .ev-coming { max-width: 560px; }
+  .ev-coming p { margin-bottom: 2rem; }
+
+  .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .offering-card { padding: 2rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--card); }
+  .offering-card h4 { font-family: var(--font-display); font-size: 1.3rem; color: var(--text); margin-bottom: 0.7rem; }
+  .offering-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin: 0; }
+
+  .private-inner { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; align-items: start; }
+  .private-inner h2 { font-size: clamp(2rem, 3vw, 2.8rem); margin-bottom: 0.25rem; }
+
+  .past-events { padding: 2.5rem; border: 1px solid var(--border); border-radius: 16px; background: var(--gold-soft); }
+  .past-count { font-family: var(--font-display); font-size: 5rem; color: var(--gold); line-height: 1; margin: 0.5rem 0; }
+  .past-label { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem !important; }
+  .past-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .past-list span { font-size: 0.82rem; color: var(--muted); padding: 0.4rem 0; border-bottom: 1px solid rgba(232,150,10,0.1); }
+  .past-list span:last-child { border-bottom: none; }
+
+  @media (max-width: 900px) {
+    .offerings-grid { grid-template-columns: 1fr 1fr; }
+    .private-inner { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .ev-section { padding: 5rem 0; }
+    .offerings-grid { grid-template-columns: 1fr; }
+  }
+</style>
