@@ -22,7 +22,6 @@ const { title, description = "Anna Wooten — Sessions & Wellness" } = Astro.pro
   <body>
     <slot />
 
-    <!-- Netlify Identity redirect script -->
     <script is:inline>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -62,7 +61,22 @@ const { title, description = "Anna Wooten — Sessions & Wellness" } = Astro.pro
     font-family: var(--font-body);
     font-weight: 300;
     color: var(--color-warm-black);
-    background-color: var(--color-cream);
+    background-color: #080412;
+    background-image:
+      /* Bright galaxy core -- warm gold/amber glow */
+      radial-gradient(ellipse 60% 40% at 38% 52%, rgba(220, 160, 80, 0.18) 0%, transparent 60%),
+      /* Inner nebula -- soft violet */
+      radial-gradient(ellipse 50% 60% at 42% 48%, rgba(160, 80, 220, 0.22) 0%, transparent 55%),
+      /* Outer nebula arm -- deep teal */
+      radial-gradient(ellipse 80% 40% at 70% 30%, rgba(40, 180, 200, 0.12) 0%, transparent 60%),
+      /* Nebula cloud -- rose/magenta */
+      radial-gradient(ellipse 55% 45% at 25% 70%, rgba(200, 80, 140, 0.14) 0%, transparent 55%),
+      /* Far nebula -- indigo */
+      radial-gradient(ellipse 70% 50% at 80% 75%, rgba(80, 60, 200, 0.12) 0%, transparent 60%),
+      /* Deep blue cosmic haze */
+      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(20, 10, 60, 0.8) 0%, transparent 80%),
+      /* Base deep space */
+      linear-gradient(135deg, #080412 0%, #0d0820 40%, #060318 100%);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
