@@ -1,0 +1,150 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const CALENDLY = 'https://calendly.com/annawootenofficial';
+const SHOPIFY = '#'; // Replace with Shopify store URL
+---
+<BaseLayout title="Digital Products — Anna Wooten" description="Self-guided hypnosis programs combining subconscious work, sound healing, and reflective exercises.">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Anna Wooten</a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/work-with-me">Work With Me</a>
+      <a href="/classes">Classes</a>
+      <a href="/products" style="color: var(--gold)">Products</a>
+      <a href="/events">Events</a>
+    </div>
+    <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="nav-cta">Book a Consultation</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-tag">Self-Guided Programs</p>
+    <h1>Digital Products</h1>
+    <p>Hypnosis, sound healing, and reflective exercises designed to help you work with the subconscious mind at your own pace — repeatable, deeply supportive, and designed for lasting change.</p>
+  </div>
+
+  <section class="products-intro">
+    <div class="container">
+      <div class="how-it-works">
+        <p class="section-tag center">How It Works</p>
+        <div class="steps">
+          <div class="step"><span class="step-num">01</span><p>Purchase your program and receive instant access via email</p></div>
+          <div class="step"><span class="step-num">02</span><p>Follow the guided hypnosis tracks at your own pace</p></div>
+          <div class="step"><span class="step-num">03</span><p>Use the journaling prompts to integrate insights after each session</p></div>
+          <div class="step"><span class="step-num">04</span><p>Repeat regularly — the subconscious absorbs new patterns over time</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="products-section">
+    <div class="container">
+      <div class="product-full">
+        <div class="product-text">
+          <p class="section-tag">Program 01</p>
+          <h2>Body Transformation Program</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>This program focuses on the subconscious patterns that influence habits, identity, and relationship with the body. Through guided hypnosis and reflective practices, it supports shifts in mindset, self-perception, and consistency with health behaviors.</p>
+          <p>Many people find that lasting change occurs when internal beliefs and identity align with the goals they are trying to achieve. This program helps create that alignment by working with the deeper layers of the mind.</p>
+          <div class="includes-list">
+            <p class="includes-title">Includes:</p>
+            <div class="include-item">&#10022; Hypnosis tracks focused on mindset and identity change</div>
+            <div class="include-item">&#10022; Sound healing background to support relaxation and focus</div>
+            <div class="include-item">&#10022; Guided journaling prompts for integration</div>
+            <div class="include-item">&#10022; Repeatable practices to reinforce new patterns</div>
+          </div>
+        </div>
+        <div class="product-cta-box">
+          <div class="cta-price">$197</div>
+          <a href={SHOPIFY} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
+          <p class="cta-note">Delivered via email after purchase</p>
+        </div>
+      </div>
+
+      <div class="product-divider"></div>
+
+      <div class="product-full">
+        <div class="product-text">
+          <p class="section-tag">Program 02</p>
+          <h2>Fertility Hypnosis Program</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>This program is designed for women who want to support their fertility journey by creating a calm and supportive internal environment. The hypnosis sessions focus on relaxation, emotional regulation, and cultivating a sense of trust and connection with the body.</p>
+          <p>While this program does not replace medical care, many women find that reducing stress and strengthening their relationship with their body can be an important part of the process.</p>
+          <div class="includes-list">
+            <p class="includes-title">Includes:</p>
+            <div class="include-item">&#10022; Guided hypnosis sessions focused on relaxation and trust in the body</div>
+            <div class="include-item">&#10022; Sound healing background to support nervous system regulation</div>
+            <div class="include-item">&#10022; Reflective journaling prompts for emotional processing</div>
+            <div class="include-item">&#10022; Practices designed for repeated listening</div>
+          </div>
+        </div>
+        <div class="product-cta-box featured-box">
+          <div class="cta-price">$297</div>
+          <a href={SHOPIFY} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
+          <p class="cta-note">Delivered via email after purchase</p>
+        </div>
+      </div>
+
+      <div class="product-divider"></div>
+
+      <div class="product-full">
+        <div class="product-text">
+          <p class="section-tag">Program 03</p>
+          <h2>Connect to Your Higher Self</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>This program focuses on developing deeper self-awareness and connection with your inner guidance. Through hypnosis, meditation, and reflective practices, it supports clarity, intuition, and alignment with personal direction.</p>
+          <p>The sessions help quiet mental noise and create space for insight, allowing you to reflect on your life path, values, and decisions with greater perspective.</p>
+          <div class="includes-list">
+            <p class="includes-title">Includes:</p>
+            <div class="include-item">&#10022; Guided hypnosis sessions for inner awareness and reflection</div>
+            <div class="include-item">&#10022; Sound healing background for relaxation and focus</div>
+            <div class="include-item">&#10022; Journaling prompts to deepen insight</div>
+            <div class="include-item">&#10022; Repeatable listening practices</div>
+          </div>
+        </div>
+        <div class="product-cta-box">
+          <div class="cta-price">$197</div>
+          <a href={SHOPIFY} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
+          <p class="cta-note">Delivered via email after purchase</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .products-intro { padding: 4rem 0 2rem; }
+  .how-it-works { max-width: 800px; margin: 0 auto; text-align: center; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem; }
+  .step { text-align: center; }
+  .step-num { display: block; font-family: var(--font-display); font-size: 2.5rem; color: var(--gold); opacity: 0.5; margin-bottom: 0.8rem; }
+  .step p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+
+  .products-section { padding: 5rem 0 8rem; }
+  .product-full { display: grid; grid-template-columns: 1.5fr 1fr; gap: 5rem; align-items: start; padding: 4rem 0; }
+  .product-divider { height: 1px; background: rgba(232,150,10,0.12); }
+  .product-text h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 0.25rem; }
+  .product-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+  .includes-list { margin-top: 1.5rem; }
+  .includes-title { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .include-item { font-size: 0.9rem; color: var(--muted); padding: 0.4rem 0; line-height: 1.6; }
+
+  .product-cta-box { padding: 2.5rem; border: 1px solid var(--card-border); border-radius: 16px; background: var(--card); text-align: center; position: sticky; top: 7rem; }
+  .product-cta-box.featured-box { border-color: rgba(232,150,10,0.35); background: rgba(232,150,10,0.06); }
+  .cta-price { font-family: var(--font-display); font-size: 3.5rem; color: var(--gold); margin-bottom: 1.5rem; }
+  .cta-note { font-size: 0.75rem; color: var(--muted); margin-top: 1rem; letter-spacing: 0.05em; }
+
+  @media (max-width: 900px) {
+    .steps { grid-template-columns: 1fr 1fr; }
+    .product-full { grid-template-columns: 1fr; }
+    .product-cta-box { position: static; }
+  }
+  @media (max-width: 768px) {
+    .steps { grid-template-columns: 1fr; }
+    .products-section { padding: 3rem 0 5rem; }
+  }
+</style>
