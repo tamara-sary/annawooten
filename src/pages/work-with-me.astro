@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const CALENDLY = 'https://calendly.com/annawootenofficial';
+---
+<BaseLayout title="Work With Me — Anna Wooten" description="1:1 Transformation: a personalized three-month container for women ready for meaningful internal change.">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Anna Wooten</a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/work-with-me" style="color: var(--gold)">Work With Me</a>
+      <a href="/classes">Classes</a>
+      <a href="/products">Products</a>
+      <a href="/events">Events</a>
+    </div>
+    <a href="#booking" class="nav-cta">Book a Consultation</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-tag">1:1 Transformation</p>
+    <h1>A three-month container for meaningful change</h1>
+    <p>Personalized, collaborative, and tailored entirely to you.</p>
+  </div>
+
+  <!-- What this is -->
+  <section class="wm-section">
+    <div class="container wm-intro">
+      <div>
+        <p class="section-tag">The Container</p>
+        <h2>Designed for women ready to go deeper</h2>
+        <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+        <p>This is a personalized three-month container for women who want focused support and meaningful internal change. Rather than a single session approach, this container allows time to explore patterns, build awareness, and integrate new ways of relating to yourself.</p>
+        <p>Much of our behavior, emotional responses, and beliefs are shaped by the subconscious mind — storing memories, learned patterns, protective responses, and internal narratives formed throughout life. When we work with the subconscious directly, lasting change becomes more possible.</p>
+        <p>Sessions take place <strong>twice per month</strong> and last approximately <strong>60–75 minutes</strong>. Each session is guided by what is present and what will be most supportive for your process.</p>
+      </div>
+      <div class="wm-details">
+        <div class="detail-card">
+          <p class="detail-label">Duration</p>
+          <p class="detail-value">3 Months</p>
+        </div>
+        <div class="detail-card">
+          <p class="detail-label">Sessions</p>
+          <p class="detail-value">Twice / Month</p>
+        </div>
+        <div class="detail-card">
+          <p class="detail-label">Length</p>
+          <p class="detail-value">60–75 Min</p>
+        </div>
+        <div class="detail-card">
+          <p class="detail-label">Format</p>
+          <p class="detail-value">1:1 Online</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Pillars -->
+  <section class="wm-section alt">
+    <div class="container">
+      <p class="section-tag center">How We Work Together</p>
+      <h2 class="section-title center">Three layers of support</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <div class="pillars-grid">
+        <div class="pillar-full">
+          <div class="pillar-header">
+            <span class="pillar-num">01</span>
+            <h3>Support Your Mind</h3>
+          </div>
+          <p>Hypnosis and meditation help access the subconscious mind where beliefs, emotional memories, and internal patterns are stored. These practices allow us to bring awareness to unconscious patterns and create space for new perspectives and internal shifts.</p>
+          <div class="tool-chips"><span>Hypnosis</span><span>Meditation</span></div>
+        </div>
+        <div class="pillar-full">
+          <div class="pillar-header">
+            <span class="pillar-num">02</span>
+            <h3>Support Your Body</h3>
+          </div>
+          <p>Breathwork and Reiki support the body's nervous system and energetic balance. These practices help release stored tension and invite the body into a more regulated and restorative state.</p>
+          <div class="tool-chips"><span>Breathwork</span><span>Reiki</span><span>Sound Healing</span></div>
+        </div>
+        <div class="pillar-full">
+          <div class="pillar-header">
+            <span class="pillar-num">03</span>
+            <h3>Support Your Soul</h3>
+          </div>
+          <p>Intuitive guidance and coaching may be included when appropriate — offering intuitive reflection and insight that support a deeper understanding of your personal path and inner experience.</p>
+          <div class="tool-chips"><span>Intuitive Guidance</span><span>Spiritual Coaching</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who this is for -->
+  <section class="wm-section">
+    <div class="container wm-for">
+      <p class="section-tag">Is This For You?</p>
+      <h2>This container is designed for women who are ready to explore themselves more deeply and want consistent support through that process.</h2>
+      <div class="for-list">
+        <div class="for-item">&#10022; You sense there are patterns at a deeper level you haven't been able to shift on your own</div>
+        <div class="for-item">&#10022; You want support that goes beyond talk — working with body, mind, and deeper self</div>
+        <div class="for-item">&#10022; You're ready for consistent, structured support over time</div>
+        <div class="for-item">&#10022; You value an approach that integrates both scientific and spiritual perspectives</div>
+        <div class="for-item">&#10022; You're committed to your own process and willing to do the inner work</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="wm-section booking-section" id="booking">
+    <div class="container">
+      <p class="section-tag center">Next Step</p>
+      <h2 class="section-title center">Schedule a Free Consultation</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <p class="booking-desc">
+        A free 30-minute conversation to explore whether this work is right for you.
+        No commitment required — just an honest conversation about where you are and where you want to go.
+      </p>
+      <div class="calendly-inline-widget" data-url={CALENDLY} style="min-width:320px;height:700px;"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .wm-section { padding: 7rem 0; }
+  .wm-section.alt { background: rgba(255,255,255,0.02); }
+  .wm-intro { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; }
+  .wm-intro h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 0.5rem; }
+  .wm-intro p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+  .wm-intro strong { color: var(--text); font-weight: 500; }
+  .wm-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .detail-card { padding: 1.5rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--card); text-align: center; }
+  .detail-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .detail-value { font-family: var(--font-display); font-size: 1.4rem; color: var(--text); }
+
+  .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .pillar-full { padding: 2.5rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); }
+  .pillar-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.2rem; }
+  .pillar-num { font-family: var(--font-display); font-size: 2rem; color: var(--gold); opacity: 0.6; }
+  .pillar-full h3 { font-size: 1.5rem; color: var(--text); }
+  .pillar-full p { color: var(--muted); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; }
+  .tool-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tool-chips span { padding: 0.3rem 0.9rem; border: 1px solid var(--border); border-radius: 9999px; font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em; }
+
+  .wm-for { max-width: 720px; }
+  .wm-for h2 { font-size: clamp(1.6rem, 2.5vw, 2rem); color: var(--muted); font-family: var(--font-display); font-weight: 300; font-style: italic; margin: 1.5rem 0 2.5rem; line-height: 1.5; }
+  .for-list { display: flex; flex-direction: column; gap: 1rem; }
+  .for-item { font-size: 0.95rem; color: var(--muted); line-height: 1.7; padding-left: 1.5rem; position: relative; }
+
+  .booking-section { text-align: center; }
+  .booking-desc { color: var(--muted); max-width: 520px; margin: 0 auto 3rem; line-height: 1.85; }
+  .calendly-inline-widget { margin: 0 auto; border-radius: 12px; overflow: hidden; }
+
+  @media (max-width: 900px) {
+    .wm-intro { grid-template-columns: 1fr; }
+    .pillars-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .wm-section { padding: 5rem 0; }
+  }
+</style>
