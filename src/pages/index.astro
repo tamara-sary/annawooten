@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Anna Wooten — Sessions & Wellness">
+
   <!-- Navigation -->
   <nav class="nav">
     <a href="/" class="nav-logo">Anna Wooten</a>
@@ -11,17 +12,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <a href="#sessions">Sessions</a>
       <a href="#contact">Contact</a>
     </div>
+    <a href="#contact" class="nav-cta">Book a Session</a>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
     <div class="hero-content">
-      <p class="hero-tag">Welcome</p>
+      <span class="hero-icon">&#9790;</span>
+      <p class="hero-tag">Wellness &amp; Personal Sessions</p>
       <h1>Your journey to<br /><em>wellness</em> starts here</h1>
       <p class="hero-description">
-        Personalized sessions designed to help you reconnect with yourself and find balance in your everyday life.
+        Personalized sessions designed to help you reconnect with yourself
+        and find balance in your everyday life.
       </p>
-      <a href="#sessions" class="btn">Explore Sessions</a>
+      <div class="hero-buttons">
+        <a href="#sessions" class="btn btn-gold">Explore Sessions</a>
+        <a href="#about" class="btn btn-outline">Meet Anna</a>
+      </div>
     </div>
   </section>
 
@@ -29,18 +36,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section id="about" class="about">
     <div class="container">
       <div class="about-grid">
-        <div class="about-image">
-          <img src="/anna.jpg" alt="Anna Wooten" />
+        <div class="about-image-wrap">
+          <img src="/anna.jpg" alt="Anna Wooten" class="about-photo" />
         </div>
         <div class="about-text">
-          <p class="section-tag">About</p>
+          <p class="section-tag">About the Guide</p>
           <h2>Hi, I'm Anna</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
           <p>
-            This is a placeholder for Anna's bio. She can edit this text directly from the CMS admin panel — no coding needed.
+            This is a placeholder for Anna's bio. She can edit this text directly
+            from the CMS admin panel — no coding needed.
           </p>
           <p>
-            Add your story, your approach, what makes your sessions unique, and why clients love working with you.
+            Add your story, your approach, what makes your sessions unique,
+            and why clients love working with you.
           </p>
+          <a href="#contact" class="btn btn-gold" style="margin-top: 2rem;">Work With Me</a>
         </div>
       </div>
     </div>
@@ -56,21 +67,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span class="session-duration">60 min</span>
           <h3>Individual Session</h3>
           <p>One-on-one personalized session tailored to your needs and goals.</p>
-          <div class="session-price">€80</div>
+          <div class="session-price">&#8364;80</div>
           <a href="#contact" class="btn btn-outline">Book Now</a>
         </div>
         <div class="session-card featured">
           <span class="session-duration">90 min</span>
           <h3>Deep Dive Session</h3>
           <p>An extended session for deeper exploration and transformation.</p>
-          <div class="session-price">€120</div>
-          <a href="#contact" class="btn">Book Now</a>
+          <div class="session-price">&#8364;120</div>
+          <a href="#contact" class="btn btn-gold">Book Now</a>
         </div>
         <div class="session-card">
           <span class="session-duration">4 weeks</span>
           <h3>Package Program</h3>
           <p>A structured program with weekly sessions for lasting change.</p>
-          <div class="session-price">€280</div>
+          <div class="session-price">&#8364;280</div>
           <a href="#contact" class="btn btn-outline">Book Now</a>
         </div>
       </div>
@@ -82,10 +93,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <p class="section-tag center">Get in Touch</p>
       <h2 class="section-title">Ready to start?</h2>
+      <div class="divider center-divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
       <p class="contact-text">
         Reach out to book a session or ask any questions. I'd love to hear from you.
       </p>
-      <a href="mailto:hello@annawooten.com" class="btn">Send me an email</a>
+      <a href="mailto:hello@annawooten.com" class="btn btn-gold">Send me an email</a>
     </div>
   </section>
 
@@ -93,124 +105,142 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <footer class="footer">
     <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
   </footer>
+
 </BaseLayout>
 
 <style>
-  /* Navigation */
+  /* ── Nav ────────────────────────────────────────────── */
   .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1.4rem 3rem;
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
-    background: rgba(10, 6, 20, 0.75);
-    backdrop-filter: blur(10px);
+    background: rgba(13, 10, 30, 0.78);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
   }
 
   .nav-logo {
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    letter-spacing: 0.02em;
-    color: var(--color-cream);
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    color: var(--text);
   }
 
   .nav-links {
     display: flex;
     gap: 2.5rem;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(240, 234, 222, 0.75);
+  }
+
+  .nav-links a:hover { color: var(--gold); transition: color 0.3s; }
+
+  .nav-cta {
+    padding: 0.55rem 1.4rem;
+    background: var(--gold);
+    color: var(--bg);
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-cream);
+    transition: opacity 0.3s;
   }
+  .nav-cta:hover { opacity: 0.85; }
 
-  .nav-links a {
-    color: var(--color-cream);
-    opacity: 0.85;
-  }
-
-  .nav-links a:hover {
-    color: var(--color-accent);
-    opacity: 1;
-    transition: color 0.3s;
-  }
-
-  /* Hero */
+  /* ── Hero ───────────────────────────────────────────── */
   .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 6rem 3rem 3rem;
-    position: relative;
+    justify-content: center;
+    text-align: center;
+    padding: 7rem 3rem 4rem;
   }
 
-  .hero-content {
-    max-width: 700px;
-    position: relative;
-    z-index: 1;
+  .hero-content { max-width: 720px; }
+
+  .hero-icon {
+    display: block;
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
   }
 
   .hero-tag {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--gold);
     margin-bottom: 1.5rem;
   }
 
   .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    color: var(--text);
     margin-bottom: 1.5rem;
-    color: var(--color-cream);
+    line-height: 1.15;
   }
 
   .hero h1 em {
-    color: var(--color-accent);
+    color: var(--gold);
     font-style: italic;
   }
 
   .hero-description {
-    font-size: 1.1rem;
-    color: rgba(251, 248, 244, 0.75);
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.85;
   }
 
-  /* Buttons */
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ── Buttons ────────────────────────────────────────── */
   .btn {
     display: inline-block;
-    padding: 0.9rem 2.2rem;
-    background: var(--color-warm-black);
-    color: var(--color-cream);
+    padding: 0.85rem 2.2rem;
+    border-radius: 9999px;
     font-family: var(--font-body);
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+    font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    border: 1px solid var(--color-warm-black);
     cursor: pointer;
     transition: all 0.3s ease;
   }
 
-  .btn:hover {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+  .btn-gold {
+    background: var(--gold);
+    color: var(--bg);
+    border: 1px solid var(--gold);
   }
+  .btn-gold:hover { opacity: 0.85; }
 
   .btn-outline {
     background: transparent;
-    color: var(--color-warm-black);
+    color: var(--text);
+    border: 1px solid rgba(240, 234, 222, 0.35);
   }
-
   .btn-outline:hover {
-    background: var(--color-warm-black);
-    color: var(--color-cream);
+    border-color: var(--gold);
+    color: var(--gold);
   }
 
-  /* Sections */
+  /* ── Shared ─────────────────────────────────────────── */
   .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -218,172 +248,180 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .section-tag {
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--gold);
     margin-bottom: 1rem;
   }
-
-  .section-tag.center {
-    text-align: center;
-  }
+  .section-tag.center { text-align: center; }
 
   .section-title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     text-align: center;
+    color: var(--text);
     margin-bottom: 3rem;
   }
 
-  /* About */
-  .about {
-    padding: 8rem 0;
-    background: var(--color-cream);
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1.2rem 0 1.8rem;
   }
+  .divider span:first-child,
+  .divider span:last-child {
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+    max-width: 60px;
+  }
+  .diamond { color: var(--gold); font-size: 0.9rem; }
+
+  .center-divider {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .center-divider span:first-child,
+  .center-divider span:last-child { max-width: 80px; }
+
+  /* ── About ──────────────────────────────────────────── */
+  .about { padding: 9rem 0; }
 
   .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 5rem;
     align-items: center;
   }
 
-  .about-image img {
+  .about-image-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image-wrap::before {
+    content: '';
+    position: absolute;
+    inset: -6px;
+    border-radius: 50% 50% 45% 45% / 48% 48% 40% 40%;
+    background: linear-gradient(160deg, rgba(201,168,76,0.35), rgba(160,80,240,0.25));
+    z-index: 0;
+  }
+
+  .about-photo {
+    position: relative;
+    z-index: 1;
     width: 100%;
+    max-width: 400px;
     aspect-ratio: 3/4;
     object-fit: cover;
     object-position: top;
-    display: block;
+    border-radius: 50% 50% 45% 45% / 48% 48% 40% 40%;
+    box-shadow: 0 0 60px rgba(160, 80, 240, 0.3), 0 0 30px rgba(201, 168, 76, 0.15);
   }
 
   .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    color: var(--text);
+    margin-bottom: 0.25rem;
   }
 
   .about-text p {
-    color: var(--color-muted);
+    color: var(--muted);
     margin-bottom: 1rem;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
-  /* Sessions */
-  .sessions {
-    padding: 8rem 0;
-    background: white;
-  }
+  /* ── Sessions ───────────────────────────────────────── */
+  .sessions { padding: 9rem 0; }
 
   .sessions-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .session-card {
-    padding: 2.5rem;
-    border: 1px solid var(--color-accent-light);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    background: var(--card);
     text-align: center;
-    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    transition: border-color 0.3s, transform 0.3s;
   }
-
   .session-card:hover {
-    border-color: var(--color-accent);
+    border-color: var(--border);
+    transform: translateY(-4px);
   }
 
   .session-card.featured {
-    background: var(--color-warm-black);
-    color: var(--color-cream);
-    border-color: var(--color-warm-black);
-  }
-
-  .session-card.featured .session-duration {
-    color: var(--color-accent);
-  }
-
-  .session-card.featured .session-price {
-    color: var(--color-cream);
-  }
-
-  .session-card.featured .btn {
-    background: var(--color-accent);
-    border-color: var(--color-accent);
+    border-color: rgba(201, 168, 76, 0.4);
+    background: rgba(201, 168, 76, 0.07);
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.1);
   }
 
   .session-duration {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--gold);
   }
 
   .session-card h3 {
-    font-family: var(--font-display);
     font-size: 1.6rem;
-    margin: 1rem 0;
+    color: var(--text);
+    margin: 0.8rem 0;
   }
 
   .session-card p {
     font-size: 0.9rem;
-    color: var(--color-muted);
-    line-height: 1.7;
+    color: var(--muted);
+    line-height: 1.75;
     margin-bottom: 1.5rem;
-  }
-
-  .session-card.featured p {
-    color: var(--color-accent-light);
   }
 
   .session-price {
     font-family: var(--font-display);
-    font-size: 2rem;
-    color: var(--color-warm-black);
+    font-size: 2.2rem;
+    color: var(--gold);
     margin-bottom: 1.5rem;
   }
 
-  /* Contact */
+  /* ── Contact ────────────────────────────────────────── */
   .contact {
-    padding: 8rem 0;
+    padding: 9rem 0;
     text-align: center;
   }
 
   .contact-text {
-    color: var(--color-muted);
-    max-width: 500px;
+    color: var(--muted);
+    max-width: 460px;
     margin: 0 auto 2.5rem;
-    line-height: 1.8;
+    line-height: 1.85;
   }
 
-  /* Footer */
+  /* ── Footer ─────────────────────────────────────────── */
   .footer {
-    padding: 3rem;
+    padding: 2.5rem;
     text-align: center;
-    font-size: 0.8rem;
-    color: var(--color-muted);
-    letter-spacing: 0.05em;
-    border-top: 1px solid var(--color-accent-light);
+    font-size: 0.78rem;
+    color: rgba(240, 234, 222, 0.35);
+    letter-spacing: 0.06em;
+    border-top: 1px solid rgba(201, 168, 76, 0.12);
   }
 
-  /* Responsive */
+  /* ── Responsive ─────────────────────────────────────── */
   @media (max-width: 768px) {
-    .nav {
-      padding: 1.2rem 1.5rem;
-    }
-    .nav-links {
-      gap: 1.5rem;
-      font-size: 0.75rem;
-    }
-    .hero {
-      padding: 6rem 1.5rem 3rem;
-    }
-    .container {
-      padding: 0 1.5rem;
-    }
-    .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .sessions-grid {
-      grid-template-columns: 1fr;
-    }
+    .nav { padding: 1.1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .container { padding: 0 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-image-wrap { max-width: 300px; margin: 0 auto; }
+    .sessions-grid { grid-template-columns: 1fr; }
   }
 </style>
