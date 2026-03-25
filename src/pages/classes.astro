@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const CALENDLY = 'https://calendly.com/annawootenofficial';
+---
+<BaseLayout title="Live Classes — Anna Wooten" description="Weekly live Zoom classes: Transformative Breathwork and Women's Group, every Tuesday.">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Anna Wooten</a>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/work-with-me">Work With Me</a>
+      <a href="/classes" style="color: var(--gold)">Classes</a>
+      <a href="/products">Products</a>
+      <a href="/events">Events</a>
+    </div>
+    <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="nav-cta">Book a Consultation</a>
+  </nav>
+
+  <div class="page-hero">
+    <p class="section-tag">Live Online &bull; Every Tuesday</p>
+    <h1>Group Classes</h1>
+    <p>Weekly Zoom classes designed to support nervous system regulation, subconscious awareness, and personal growth in a structured group setting.</p>
+  </div>
+
+  <!-- Breathwork Class -->
+  <section class="class-section">
+    <div class="container">
+      <div class="class-grid">
+        <div class="class-info">
+          <p class="section-tag">Tuesday Evenings</p>
+          <h2>Transformative Breathwork</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>A guided breathwork experience using Biodynamic Breathwork and Trauma Release techniques. Through conscious breathing and body awareness, participants explore the connection between breath, the nervous system, and subconscious emotional patterns.</p>
+          <p>These sessions focus on regulation, release of stored tension, and deeper embodiment.</p>
+          <div class="class-meta">
+            <div class="meta-row"><span class="meta-label">Schedule</span><span>Tuesdays &bull; 6:00–7:15 PM CST</span></div>
+            <div class="meta-row"><span class="meta-label">Format</span><span>Live Zoom</span></div>
+            <div class="meta-row"><span class="meta-label">Drop-in</span><span class="price-text">$40</span></div>
+            <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">$129 / month</span></div>
+          </div>
+          <a href="#" class="btn btn-gold">Enroll Now</a>
+        </div>
+        <div class="class-visual bw-visual">
+          <div class="visual-label">Breathwork</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Women's Group -->
+  <section class="class-section alt">
+    <div class="container">
+      <div class="class-grid reverse">
+        <div class="class-visual wg-visual">
+          <div class="visual-label">Women's Group</div>
+        </div>
+        <div class="class-info">
+          <p class="section-tag">Tuesday Evenings</p>
+          <h2>Women's Group</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>A facilitated weekly group designed for deeper emotional awareness, reflection, and connection among women. This space combines guided discussion, meditation, sensuality, empowerment, and reflective practices.</p>
+          <p>The group setting allows participants to witness and be witnessed — offering insight, accountability, and support within a consistent and supportive community container.</p>
+          <div class="class-meta">
+            <div class="meta-row"><span class="meta-label">Schedule</span><span>Tuesdays &bull; 7:30–9:00 PM CST</span></div>
+            <div class="meta-row"><span class="meta-label">Format</span><span>Live Zoom</span></div>
+            <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">$149 / month</span></div>
+          </div>
+          <a href="#" class="btn btn-gold">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Combined offer -->
+  <section class="combo-section">
+    <div class="container">
+      <div class="combo-card">
+        <span class="combo-badge">Best Value</span>
+        <p class="section-tag center">Attend Both Classes</p>
+        <h2>Combined Membership</h2>
+        <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+        <p>Women who participate in both Transformative Breathwork and Women's Group receive a combined monthly membership rate.</p>
+        <div class="combo-price">$229 <span>/ month</span></div>
+        <p class="combo-save">Save $49 compared to enrolling separately</p>
+        <a href="#" class="btn btn-gold">Enroll in Both</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .class-section { padding: 7rem 0; }
+  .class-section.alt { background: rgba(255,255,255,0.02); }
+  .class-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center; }
+  .class-grid.reverse { direction: rtl; }
+  .class-grid.reverse > * { direction: ltr; }
+  .class-info h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 0.25rem; }
+  .class-info p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
+  .class-meta { margin: 2rem 0; border: 1px solid var(--card-border); border-radius: 12px; overflow: hidden; }
+  .meta-row { display: flex; justify-content: space-between; align-items: center; padding: 0.9rem 1.4rem; border-bottom: 1px solid var(--card-border); font-size: 0.88rem; }
+  .meta-row:last-child { border-bottom: none; }
+  .meta-label { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .price-text { color: var(--gold); font-family: var(--font-display); font-size: 1.2rem; }
+  .class-visual { border-radius: 14px; aspect-ratio: 4/5; display: flex; align-items: flex-end; padding: 2rem; }
+  .bw-visual { background: linear-gradient(135deg, rgba(160,80,240,0.35) 0%, rgba(80,120,255,0.25) 100%); border: 1px solid var(--card-border); }
+  .wg-visual { background: linear-gradient(135deg, rgba(232,150,10,0.2) 0%, rgba(200,80,140,0.25) 100%); border: 1px solid var(--card-border); }
+  .visual-label { font-family: var(--font-display); font-size: 1.8rem; color: rgba(240,234,222,0.3); font-style: italic; }
+
+  .combo-section { padding: 6rem 0; }
+  .combo-card { max-width: 560px; margin: 0 auto; text-align: center; padding: 4rem 3rem; border: 1px solid var(--border); border-radius: 20px; background: rgba(232,150,10,0.06); position: relative; }
+  .combo-badge { position: absolute; top: -0.8rem; left: 50%; transform: translateX(-50%); background: var(--gold); color: #0d0a1e; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.3rem 1.2rem; border-radius: 9999px; white-space: nowrap; }
+  .combo-card h2 { font-size: 2.5rem; margin-bottom: 0.25rem; }
+  .combo-card p { color: var(--muted); margin-bottom: 0.5rem; line-height: 1.8; }
+  .combo-price { font-family: var(--font-display); font-size: 4rem; color: var(--gold); margin: 1.5rem 0 0.5rem; }
+  .combo-price span { font-size: 1.5rem; color: var(--muted); }
+  .combo-save { font-size: 0.82rem; color: var(--muted); margin-bottom: 2rem !important; }
+
+  @media (max-width: 768px) {
+    .class-section { padding: 5rem 0; }
+    .class-grid, .class-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .class-visual { aspect-ratio: 2/1; }
+  }
+</style>
