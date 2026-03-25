@@ -16,12 +16,11 @@ const { title, description = "Anna Wooten — Sessions & Wellness" } = Astro.pro
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
     <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <slot />
-
     <script is:inline>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -38,45 +37,103 @@ const { title, description = "Anna Wooten — Sessions & Wellness" } = Astro.pro
 
 <style is:global>
   :root {
-    --color-cream: #FBF8F4;
-    --color-warm-black: #2A2522;
-    --color-accent: #C4956A;
-    --color-accent-light: #E8D5C0;
-    --color-muted: #8A7E76;
+    --bg:        #0d0a1e;
+    --text:      #f0eade;
+    --gold:      #c9a84c;
+    --gold-soft: rgba(201, 168, 76, 0.18);
+    --muted:     rgba(240, 234, 222, 0.58);
+    --border:    rgba(201, 168, 76, 0.22);
+    --card:      rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.09);
     --font-display: 'Cormorant Garamond', serif;
-    --font-body: 'Outfit', sans-serif;
+    --font-body:    'Outfit', sans-serif;
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
   body {
     font-family: var(--font-body);
     font-weight: 300;
-    color: var(--color-warm-black);
-    background-color: #080412;
+    color: var(--text);
+    background-color: var(--bg);
     background-image:
-      /* Bright galaxy core -- warm gold/amber glow */
-      radial-gradient(ellipse 60% 40% at 38% 52%, rgba(220, 160, 80, 0.18) 0%, transparent 60%),
-      /* Inner nebula -- soft violet */
-      radial-gradient(ellipse 50% 60% at 42% 48%, rgba(160, 80, 220, 0.22) 0%, transparent 55%),
-      /* Outer nebula arm -- deep teal */
-      radial-gradient(ellipse 80% 40% at 70% 30%, rgba(40, 180, 200, 0.12) 0%, transparent 60%),
-      /* Nebula cloud -- rose/magenta */
-      radial-gradient(ellipse 55% 45% at 25% 70%, rgba(200, 80, 140, 0.14) 0%, transparent 55%),
-      /* Far nebula -- indigo */
-      radial-gradient(ellipse 70% 50% at 80% 75%, rgba(80, 60, 200, 0.12) 0%, transparent 60%),
-      /* Deep blue cosmic haze */
-      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(20, 10, 60, 0.8) 0%, transparent 80%),
-      /* Base deep space */
-      linear-gradient(135deg, #080412 0%, #0d0820 40%, #060318 100%);
+      /* Stars */
+      radial-gradient(ellipse 1px 1px at 63.4% 4.4%, rgba(255,255,255,0.49) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 15.4% 11.8%, rgba(255,255,255,0.72) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 10.3% 42.5%, rgba(255,255,255,0.36) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 24.3% 59.8%, rgba(255,255,255,0.63) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 42.3% 45.1%, rgba(255,255,255,0.49) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 74.8% 17.3%, rgba(255,255,255,0.56) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 16.9% 93.9%, rgba(255,255,255,0.52) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 38.5% 36.5%, rgba(255,255,255,0.52) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 79.5% 72.1%, rgba(255,255,255,0.62) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 9.6% 30.1%, rgba(255,255,255,0.66) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 57.4% 69.6%, rgba(255,255,255,0.37) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 76.2% 96.6%, rgba(255,255,255,0.78) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 38.5% 45.5%, rgba(255,255,255,0.77) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 37.5% 22.1%, rgba(255,255,255,0.48) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 60.5% 18.4%, rgba(255,255,255,0.71) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 46.4% 27.9%, rgba(255,255,255,0.81) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 23.1% 33.1%, rgba(255,255,255,0.73) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 24.0% 5.1%, rgba(255,255,255,0.51) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 8.4% 89.7%, rgba(255,255,255,0.63) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 22.4% 49.9%, rgba(255,255,255,0.79) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 15.7% 15.4%, rgba(255,255,255,0.72) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 27.2% 58.1%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 36.8% 97.7%, rgba(255,255,255,0.42) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 10.7% 6.5%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 78.0% 42.5%, rgba(255,255,255,0.38) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 59.2% 46.9%, rgba(255,255,255,0.48) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 84.6% 3.1%, rgba(255,255,255,0.71) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 74.1% 75.8%, rgba(255,255,255,0.52) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 43.7% 45.6%, rgba(255,255,255,0.83) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 95.3% 75.1%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 85.6% 30.7%, rgba(255,255,255,0.67) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 21.1% 37.9%, rgba(255,255,255,0.43) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 90.2% 59.5%, rgba(255,255,255,0.59) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 91.2% 86.4%, rgba(255,255,255,0.77) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 25.0% 25.1%, rgba(255,255,255,0.63) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 10.2% 48.7%, rgba(255,255,255,0.38) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 75.5% 14.3%, rgba(255,255,255,0.59) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 17.9% 52.7%, rgba(255,255,255,0.65) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 91.2% 74.5%, rgba(255,255,255,0.69) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 40.3% 66.5%, rgba(255,255,255,0.54) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 45.3% 25.8%, rgba(255,255,255,0.38) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 58.5% 24.1%, rgba(255,255,255,0.46) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 70.0% 7.7%, rgba(255,255,255,0.38) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 84.5% 8.8%, rgba(255,255,255,0.47) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 22.6% 14.7%, rgba(255,255,255,0.82) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 57.3% 25.3%, rgba(255,255,255,0.59) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 20.3% 11.3%, rgba(255,255,255,0.57) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 41.5% 84.9%, rgba(255,255,255,0.38) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 7.8% 71.9%, rgba(255,255,255,0.75) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 25.9% 20.3%, rgba(255,255,255,0.57) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 19.6% 46.4%, rgba(255,255,255,0.79) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 44.5% 84.7%, rgba(255,255,255,0.63) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 64.6% 53.9%, rgba(255,255,255,0.36) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 90.9% 83.5%, rgba(255,255,255,0.43) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 48.2% 85.0%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 38.4% 96.6%, rgba(255,255,255,0.48) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 29.4% 68.9%, rgba(255,255,255,0.72) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 65.5% 48.7%, rgba(255,255,255,0.44) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 95.0% 57.6%, rgba(255,255,255,0.62) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 7.5% 58.1%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 17.1% 94.2%, rgba(255,255,255,0.39) 0%, transparent 100%),
+      radial-gradient(ellipse 1.5px 1.5px at 8.6% 8.5%, rgba(255,255,255,0.78) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 13.5% 87.5%, rgba(255,255,255,0.47) 0%, transparent 100%),
+      radial-gradient(ellipse 2px 2px at 5.8% 9.9%, rgba(255,255,255,0.68) 0%, transparent 100%),
+      radial-gradient(ellipse 1px 1px at 52.2% 91.7%, rgba(255,255,255,0.45) 0%, transparent 100%),
+      /* Purple nebula — left sweep */
+      radial-gradient(ellipse 75% 55% at 15% 65%, rgba(160, 80, 240, 0.28) 0%, transparent 65%),
+      /* Violet cloud — center */
+      radial-gradient(ellipse 60% 45% at 48% 45%, rgba(200, 120, 255, 0.18) 0%, transparent 60%),
+      /* Blue nebula — right */
+      radial-gradient(ellipse 65% 50% at 82% 35%, rgba(80, 120, 255, 0.25) 0%, transparent 62%),
+      /* Lavender mist — top right */
+      radial-gradient(ellipse 50% 40% at 72% 12%, rgba(210, 160, 255, 0.15) 0%, transparent 55%),
+      /* Deep indigo anchor */
+      radial-gradient(ellipse 100% 80% at 50% 50%, rgba(30, 15, 70, 0.6) 0%, transparent 80%);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
@@ -87,13 +144,6 @@ const { title, description = "Anna Wooten — Sessions & Wellness" } = Astro.pro
     line-height: 1.2;
   }
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  img {
-    max-width: 100%;
-    display: block;
-  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
 </style>
