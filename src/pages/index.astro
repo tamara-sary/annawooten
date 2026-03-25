@@ -30,7 +30,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="container">
       <div class="about-grid">
         <div class="about-image">
-          <div class="image-placeholder">Photo</div>
+          <img src="/anna.jpg" alt="Anna Wooten" />
         </div>
         <div class="about-text">
           <p class="section-tag">About</p>
@@ -107,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     left: 0;
     right: 0;
     z-index: 100;
-    background: rgba(251, 248, 244, 0.9);
+    background: rgba(10, 6, 20, 0.75);
     backdrop-filter: blur(10px);
   }
 
@@ -115,6 +115,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-family: var(--font-display);
     font-size: 1.5rem;
     letter-spacing: 0.02em;
+    color: var(--color-cream);
   }
 
   .nav-links {
@@ -123,10 +124,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 0.85rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: var(--color-cream);
+  }
+
+  .nav-links a {
+    color: var(--color-cream);
+    opacity: 0.85;
   }
 
   .nav-links a:hover {
     color: var(--color-accent);
+    opacity: 1;
     transition: color 0.3s;
   }
 
@@ -136,10 +144,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex;
     align-items: center;
     padding: 6rem 3rem 3rem;
+    position: relative;
   }
 
   .hero-content {
     max-width: 700px;
+    position: relative;
+    z-index: 1;
   }
 
   .hero-tag {
@@ -153,7 +164,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .hero h1 {
     font-size: clamp(2.8rem, 6vw, 4.5rem);
     margin-bottom: 1.5rem;
-    color: var(--color-warm-black);
+    color: var(--color-cream);
   }
 
   .hero h1 em {
@@ -163,7 +174,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .hero-description {
     font-size: 1.1rem;
-    color: var(--color-muted);
+    color: rgba(251, 248, 244, 0.75);
     max-width: 480px;
     margin-bottom: 2.5rem;
     line-height: 1.8;
@@ -227,6 +238,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* About */
   .about {
     padding: 8rem 0;
+    background: var(--color-cream);
   }
 
   .about-grid {
@@ -236,16 +248,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     align-items: center;
   }
 
-  .image-placeholder {
+  .about-image img {
+    width: 100%;
     aspect-ratio: 3/4;
-    background: var(--color-accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-muted);
-    font-size: 0.9rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    object-fit: cover;
+    object-position: top;
+    display: block;
   }
 
   .about-text h2 {
