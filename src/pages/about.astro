@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const CALENDLY = 'https://calendly.com/annawootenofficial';
+---
+<BaseLayout title="About — Anna Wooten" description="Anna Wooten is an integrative practitioner, coach, and facilitator working at the intersection of the nervous system, the subconscious mind, and personal transformation.">
+  <nav class="nav">
+    <a href="/" class="nav-logo">Anna Wooten</a>
+    <div class="nav-links">
+      <a href="/about" style="color: var(--gold)">About</a>
+      <a href="/work-with-me">Work With Me</a>
+      <a href="/classes">Classes</a>
+      <a href="/products">Products</a>
+      <a href="/events">Events</a>
+    </div>
+    <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="nav-cta">Book a Consultation</a>
+  </nav>
+
+  <!-- Bio -->
+  <section class="about-bio">
+    <div class="container">
+      <div class="bio-grid">
+        <div class="bio-img-wrap">
+          <img src="/anna.jpg" alt="Anna Wooten" class="bio-photo" />
+        </div>
+        <div class="bio-text">
+          <p class="section-tag">About the Guide</p>
+          <h1>Anna Wooten</h1>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>Anna Wooten is an integrative practitioner, coach, and facilitator who works at the intersection of the nervous system, the subconscious mind, and personal transformation. Her work focuses on helping individuals understand the deeper patterns that shape their beliefs, emotional responses, and behaviors — and supporting them in creating meaningful internal change.</p>
+          <p>Her approach integrates breathwork, hypnosis, meditation, somatic practices, and intuitive guidance to help clients access the subconscious layers of the mind where many long-standing patterns are formed.</p>
+          <p>Anna is currently a graduate student in Clinical Mental Health Counseling at Naropa University, a program known for integrating contemplative psychology, mindfulness, and body-based approaches to healing.</p>
+          <div class="credentials">
+            <span>&#10022; Certified Integrative Trauma Coach</span>
+            <span>&#10022; Certified Consulting Hypnotist</span>
+            <span>&#10022; Reiki Master</span>
+            <span>&#10022; Sound Healing Practitioner</span>
+            <span>&#10022; Meditation Teacher</span>
+            <span>&#10022; Graduate Student, Naropa University</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="about-story">
+    <div class="container">
+      <p class="section-tag">My Story</p>
+      <h2>How I got here</h2>
+      <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <div class="story-text">
+        <p>By most definitions, I was successful. I did well in school, built a career, ran a technology company, and created the life many people aim for. From the outside everything looked good. Inside, I felt disconnected from my body and from any real sense of joy or meaning.</p>
+        <p>When my health began to break down through autoimmune challenges, I started searching for answers. My hair was falling out, my cycle stopped, and I knew something deeper was happening in my body. Rather than accepting that something was "wrong" with me, I began exploring nutrition, emotional healing, meditation, and spiritual practice.</p>
+        <p>What began as a desire to feel better slowly became a devotion to understanding myself. Through deep personal work, I learned to listen to my body, face difficult emotions, and reconnect with a deeper inner wisdom that had always been present beneath the noise of fear and conditioning.</p>
+        <p>My path eventually led me through profound life changes — moving across the country, ending my marriage, and committing to a deeper exploration of healing practices. Over time, the combination of meditation, hypnosis, Reiki, sound healing, and intentional self-reflection helped me experience real transformation.</p>
+        <p>Today I support others in their own process of reconnection and self-understanding. My work integrates both scientific and spiritual perspectives because both were essential in my own healing. I believe that when we care for our physical body, listen to our emotions, and reconnect with our deeper self, we move toward a more natural state of health and alignment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modalities -->
+  <section class="about-modalities">
+    <div class="container">
+      <p class="section-tag center">The Tools</p>
+      <h2 class="section-title center">Modalities</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <div class="modality-cards">
+        <div class="mod-card">
+          <h3>Hypnosis</h3>
+          <p>A focused, relaxed state of awareness where the subconscious mind becomes more accessible. We work directly with internal patterns, beliefs, and emotional imprints at a deeper level than conscious thought alone. You remain aware and in control throughout.</p>
+          <div class="benefits"><span>Subconscious pattern access</span><span>Belief repatterning</span><span>Deeper internal shifts</span><span>Greater clarity</span></div>
+        </div>
+        <div class="mod-card">
+          <h3>Breathwork</h3>
+          <p>A guided somatic practice using intentional breathing patterns to access deeper layers of the nervous system and subconscious. Trained in Biodynamic Breathwork, which combines conscious connected breathing with body awareness to support emotional processing.</p>
+          <div class="benefits"><span>Nervous system regulation</span><span>Release of stored tension</span><span>Emotional integration</span><span>Body awareness</span></div>
+        </div>
+        <div class="mod-card">
+          <h3>Sound Healing</h3>
+          <p>A meditative practice using vibration and tone — crystal singing bowls and resonant instruments — to support relaxation and nervous system regulation. Creates sustained frequencies the body naturally responds to, encouraging deep calm and receptivity.</p>
+          <div class="benefits"><span>Deep relaxation</span><span>Stress reduction</span><span>Present-moment awareness</span><span>Restorative experience</span></div>
+        </div>
+        <div class="mod-card">
+          <h3>Reiki</h3>
+          <p>An energy healing practice working with the body's natural energetic system to support balance and restoration. Offered in person or at a distance, through light touch or hands placed just above the body. Subtle, non-invasive, and deeply calming.</p>
+          <div class="benefits"><span>Nervous system regulation</span><span>Energetic balance</span><span>Deep relaxation</span><span>Integration support</span></div>
+        </div>
+        <div class="mod-card">
+          <h3>Meditation</h3>
+          <p>Structured and intentional — including both mindfulness-based meditation and guided visualization. Mindfulness strengthens present-moment awareness; visualization engages internal imagery to support clarity, alignment, and intentional growth.</p>
+          <div class="benefits"><span>Self-awareness</span><span>Emotional regulation</span><span>Mental clarity</span><span>Intuition</span></div>
+        </div>
+        <div class="mod-card">
+          <h3>Spiritual Guidance</h3>
+          <p>Offered as a form of reflective spiritual guidance in a focused, meditative state. Rather than predicting the future, the process explores patterns, themes, and questions present in your life — providing perspective and space to reflect from a broader viewpoint.</p>
+          <div class="benefits"><span>Expanded perspective</span><span>Pattern clarity</span><span>Intuitive connection</span><span>Spiritual exploration</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-cta">
+    <div class="container">
+      <p class="section-tag center">Work Together</p>
+      <h2 class="section-title center">Ready to begin?</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <p class="cta-text">Schedule a free consultation to explore whether this work is right for you.</p>
+      <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="btn btn-gold">Book a Free Consultation</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
+  </footer>
+</BaseLayout>
+
+<style>
+  .about-bio { padding: 9rem 0 7rem; }
+  .bio-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: start; }
+  .bio-img-wrap { position: sticky; top: 7rem; }
+  .bio-img-wrap::before { content: ''; position: absolute; inset: -6px; border-radius: 50% 50% 45% 45% / 48% 48% 40% 40%; background: linear-gradient(160deg, rgba(232,150,10,0.3), rgba(160,80,240,0.22)); z-index: 0; }
+  .bio-photo { position: relative; z-index: 1; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; border-radius: 50% 50% 45% 45% / 48% 48% 40% 40%; box-shadow: 0 0 60px rgba(160,80,240,0.3), 0 0 25px rgba(232,150,10,0.12); }
+  .bio-text h1 { font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 0.25rem; }
+  .bio-text p { color: var(--muted); line-height: 1.85; margin-bottom: 1.1rem; }
+  .credentials { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+  .credentials span { padding: 0.35rem 1rem; border: 1px solid var(--border); border-radius: 9999px; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  .about-story { padding: 7rem 0; background: rgba(255,255,255,0.02); }
+  .about-story h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.25rem; }
+  .story-text { max-width: 680px; margin-top: 0.5rem; }
+  .story-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.3rem; font-size: 1rem; }
+
+  .about-modalities { padding: 7rem 0; }
+  .modality-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .mod-card { padding: 2.2rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); }
+  .mod-card h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); margin-bottom: 1rem; }
+  .mod-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
+  .benefits { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .benefits span { padding: 0.25rem 0.7rem; border: 1px solid rgba(232,150,10,0.2); border-radius: 9999px; font-size: 0.72rem; color: var(--gold); }
+
+  .about-cta { padding: 8rem 0; text-align: center; }
+  .cta-text { color: var(--muted); max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.85; }
+
+  @media (max-width: 900px) {
+    .modality-cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .about-bio { padding: 7rem 0 5rem; }
+    .bio-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .bio-img-wrap { position: static; max-width: 300px; }
+    .about-story, .about-modalities { padding: 5rem 0; }
+    .modality-cards { grid-template-columns: 1fr; }
+    .about-cta { padding: 5rem 0; }
+  }
+</style>
