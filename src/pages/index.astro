@@ -93,6 +93,50 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="testimonials-header">
+      <p class="section-tag center">Kind Words</p>
+      <h2 class="section-title center">What clients say</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+    </div>
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-cols">
+
+        <!-- Column 1 -->
+        <div class="t-col">
+          <div class="t-scroll t-scroll-1">
+            <div class="t-card"><p class="t-quote">"This work changed how I see myself and my patterns completely. Three months with Anna gave me tools I use every single day."</p><p class="t-name">Sarah M.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"The breathwork sessions were unlike anything I'd experienced. I feel more connected to my body than I ever have."</p><p class="t-name">Jamie L.</p><p class="t-role">Breathwork Class</p></div>
+            <div class="t-card"><p class="t-quote">"I came in for the 1:1 package not knowing what to expect. What happened over those three months genuinely shifted something deep in me."</p><p class="t-name">Priya S.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"Anna's presence alone creates safety. I've done a lot of personal work and this was the most integrated approach I've encountered."</p><p class="t-name">Lily W.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="t-card"><p class="t-quote">"This work changed how I see myself and my patterns completely. Three months with Anna gave me tools I use every single day."</p><p class="t-name">Sarah M.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"The breathwork sessions were unlike anything I'd experienced. I feel more connected to my body than I ever have."</p><p class="t-name">Jamie L.</p><p class="t-role">Breathwork Class</p></div>
+            <div class="t-card"><p class="t-quote">"I came in for the 1:1 package not knowing what to expect. What happened over those three months genuinely shifted something deep in me."</p><p class="t-name">Priya S.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"Anna's presence alone creates safety. I've done a lot of personal work and this was the most integrated approach I've encountered."</p><p class="t-name">Lily W.</p><p class="t-role">1:1 Transformation Client</p></div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="t-col">
+          <div class="t-scroll t-scroll-2">
+            <div class="t-card"><p class="t-quote">"I was skeptical about hypnosis but Anna made it feel so safe and grounded. I've released patterns I've carried for decades."</p><p class="t-name">Rachel T.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"The Women's Group became the most consistent source of growth in my week. I can't imagine not having it now."</p><p class="t-name">Danielle R.</p><p class="t-role">Women's Group Member</p></div>
+            <div class="t-card"><p class="t-quote">"Anna holds space in a way that's rare. I left every session feeling seen, supported, and clearer than when I arrived."</p><p class="t-name">Morgan K.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"The sound bath was so restorative I didn't realize how much tension I was holding until it was gone. Absolutely beautiful."</p><p class="t-name">Elena V.</p><p class="t-role">In-Person Event</p></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="t-card"><p class="t-quote">"I was skeptical about hypnosis but Anna made it feel so safe and grounded. I've released patterns I've carried for decades."</p><p class="t-name">Rachel T.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"The Women's Group became the most consistent source of growth in my week. I can't imagine not having it now."</p><p class="t-name">Danielle R.</p><p class="t-role">Women's Group Member</p></div>
+            <div class="t-card"><p class="t-quote">"Anna holds space in a way that's rare. I left every session feeling seen, supported, and clearer than when I arrived."</p><p class="t-name">Morgan K.</p><p class="t-role">1:1 Transformation Client</p></div>
+            <div class="t-card"><p class="t-quote">"The sound bath was so restorative I didn't realize how much tension I was holding until it was gone. Absolutely beautiful."</p><p class="t-name">Elena V.</p><p class="t-role">In-Person Event</p></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Classes Preview -->
   <section class="preview-section">
     <div class="container">
@@ -313,6 +357,95 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   .final-cta { padding: 9rem 0; text-align: center; }
   .final-cta-text { color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; line-height: 1.85; }
 
+
+  /* Testimonials */
+  .testimonials {
+    padding: 8rem 0;
+  }
+  .testimonials-header {
+    margin-bottom: 3rem;
+  }
+  .testimonials-track-wrap {
+    position: relative;
+    height: 580px;
+    overflow: hidden;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 18%,
+      black 82%,
+      transparent 100%
+    );
+  }
+  .testimonials-cols {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 3rem;
+    height: 100%;
+  }
+  .t-col {
+    flex: 1;
+    overflow: hidden;
+  }
+  .t-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .t-scroll-1 {
+    animation: scroll-up 28s linear infinite;
+  }
+  .t-scroll-2 {
+    animation: scroll-up 22s linear infinite;
+    margin-top: -120px;
+  }
+  @keyframes scroll-up {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+  }
+  .t-card {
+    padding: 1.8rem 2rem;
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    background: var(--card);
+    backdrop-filter: blur(8px);
+    flex-shrink: 0;
+  }
+  .t-quote {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+  .t-name {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+  }
+  .t-role {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 0.2rem;
+  }
+  @media (max-width: 768px) {
+    .testimonials-cols { gap: 1rem; padding: 0 1rem; }
+    .t-scroll-2 { display: none; }
+    .testimonials-cols { max-width: 100%; }
+  }
+
   @media (max-width: 900px) {
     .feature-pillars { grid-template-columns: 1fr; }
     .three-col { grid-template-columns: 1fr; }
@@ -327,3 +460,4 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     .final-cta { padding: 6rem 0; }
   }
 </style>
+
