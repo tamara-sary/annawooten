@@ -111,6 +111,65 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
     </div>
   </section>
 
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="popup-overlay" role="dialog" aria-modal="true">
+    <div class="popup-card">
+      <button class="popup-close" id="popup-close-btn" aria-label="Close">&times;</button>
+      <p class="section-tag center">Stay Connected</p>
+      <h2 class="popup-title">Join the Circle</h2>
+      <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+      <p class="popup-desc">Get updates on upcoming classes, events, and offerings from Anna.</p>
+      <form name="newsletter" method="POST" data-netlify="true" class="popup-form" id="popup-form">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <input type="email" name="email" placeholder="Your email address" required class="popup-input" />
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+      <p class="popup-note">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function() {
+      if (!sessionStorage.getItem('popupShown')) {
+        setTimeout(function() {
+          var popup = document.getElementById('newsletter-popup');
+          if (popup) {
+            popup.classList.add('popup-visible');
+            sessionStorage.setItem('popupShown', '1');
+          }
+        }, 3000);
+      }
+
+      function closePopup() {
+        var popup = document.getElementById('newsletter-popup');
+        if (popup) popup.classList.remove('popup-visible');
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var closeBtn = document.getElementById('popup-close-btn');
+        if (closeBtn) closeBtn.addEventListener('click', closePopup);
+
+        var overlay = document.getElementById('newsletter-popup');
+        if (overlay) overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) closePopup();
+        });
+
+        var form = document.getElementById('popup-form');
+        if (form) form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString()
+          }).then(function() {
+            form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
+          }).catch(function() {
+            form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
+          });
+        });
+      });
+    })();
+  </script>
   <footer class="footer">
     <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
   </footer>
@@ -147,4 +206,19 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
     .steps { grid-template-columns: 1fr; }
     .products-section { padding: 3rem 0 5rem; }
   }
+
+  /* Newsletter popup */
+  .popup-overlay { position: fixed; inset: 0; background: rgba(13,10,30,0.85); backdrop-filter: blur(10px); z-index: 999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s ease; padding: 1.5rem; }
+  .popup-overlay.popup-visible { opacity: 1; pointer-events: all; }
+  .popup-card { background: #16112e; border: 1px solid rgba(232,150,10,0.28); border-radius: 20px; padding: 3.5rem; max-width: 480px; width: 100%; text-align: center; position: relative; box-shadow: 0 0 60px rgba(160,80,240,0.2); }
+  .popup-close { position: absolute; top: 1.2rem; right: 1.5rem; background: none; border: none; color: rgba(240,234,222,0.35); font-size: 1.8rem; cursor: pointer; line-height: 1; transition: color 0.2s; padding: 0; }
+  .popup-close:hover { color: var(--gold); }
+  .popup-title { font-size: 2.2rem; margin-bottom: 0.25rem; }
+  .popup-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.8rem; }
+  .popup-form { display: flex; flex-direction: column; gap: 1rem; }
+  .popup-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(232,150,10,0.22); border-radius: 9999px; padding: 0.9rem 1.6rem; color: var(--text); font-family: var(--font-body); font-size: 0.88rem; outline: none; transition: border-color 0.3s; }
+  .popup-input::placeholder { color: rgba(240,234,222,0.35); }
+  .popup-input:focus { border-color: rgba(232,150,10,0.55); }
+  .popup-note { font-size: 0.72rem; color: var(--muted); margin-top: 1rem; opacity: 0.55; }
+  .popup-success { color: var(--gold); font-family: var(--font-display); font-size: 1.4rem; font-style: italic; padding: 1rem 0; }
 </style>
