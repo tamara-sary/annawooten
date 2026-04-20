@@ -204,7 +204,7 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   <section class="preview-section">
     <div class="container">
       <div class="events-teaser-grid">
-        <div class="events-visual" style="background-image: url('/events-anna.jpeg');"></div>
+        <div class="events-visual" style="background-image: url('/events-anna.jpeg'); background-position: 58% center;"></div>
         <div class="events-teaser-content">
           <p class="section-tag">Northwest Arkansas</p>
           <h2 class="section-title">In-Person Events</h2>
@@ -398,7 +398,7 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
 
   /* Events teaser */
   .events-teaser-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 5rem; align-items: center; }
-  .events-visual { width: 100%; aspect-ratio: 4/5; border-radius: 14px; background: linear-gradient(160deg, rgba(160,80,240,0.35) 0%, rgba(232,150,10,0.25) 100%); background-size: cover; background-position: center; border: 1px solid var(--card-border); }
+  .events-visual { width: 100%; aspect-ratio: 4/5; border-radius: 14px; background: linear-gradient(160deg, rgba(160,80,240,0.35) 0%, rgba(232,150,10,0.25) 100%); background-size: cover; background-position: center; overflow: hidden; }
 
   /* Final CTA */
   .final-cta { padding: 9rem 0; text-align: center; }
