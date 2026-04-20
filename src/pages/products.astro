@@ -129,46 +129,39 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
   </div>
 
   <script is:inline>
-    (function() {
-      if (!sessionStorage.getItem('popupShown')) {
-        setTimeout(function() {
-          var popup = document.getElementById('newsletter-popup');
-          if (popup) {
-            popup.classList.add('popup-visible');
-            sessionStorage.setItem('popupShown', '1');
-          }
-        }, 3000);
-      }
+    function closePopup() {
+      var popup = document.getElementById('newsletter-popup');
+      if (popup) popup.classList.remove('popup-visible');
+    }
 
-      function closePopup() {
-        var popup = document.getElementById('newsletter-popup');
-        if (popup) popup.classList.remove('popup-visible');
-      }
+    document.getElementById('popup-close-btn').addEventListener('click', closePopup);
 
-      document.addEventListener('DOMContentLoaded', function() {
-        var closeBtn = document.getElementById('popup-close-btn');
-        if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    document.getElementById('newsletter-popup').addEventListener('click', function(e) {
+      if (e.target === this) closePopup();
+    });
 
-        var overlay = document.getElementById('newsletter-popup');
-        if (overlay) overlay.addEventListener('click', function(e) {
-          if (e.target === overlay) closePopup();
-        });
-
-        var form = document.getElementById('popup-form');
-        if (form) form.addEventListener('submit', function(e) {
-          e.preventDefault();
-          fetch('/', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(new FormData(form)).toString()
-          }).then(function() {
-            form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
-          }).catch(function() {
-            form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
-          });
-        });
+    document.getElementById('popup-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function() {
+        form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
+      }).catch(function() {
+        form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
       });
-    })();
+    });
+
+    var seen = localStorage.getItem('newsletterSeen');
+    var now = Date.now();
+    if (!seen || now - parseInt(seen) > 7 * 24 * 60 * 60 * 1000) {
+      setTimeout(function() {
+        document.getElementById('newsletter-popup').classList.add('popup-visible');
+        localStorage.setItem('newsletterSeen', now.toString());
+      }, 3000);
+    }
   </script>
   <footer class="footer">
     <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
