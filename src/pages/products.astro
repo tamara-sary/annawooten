@@ -119,11 +119,7 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
       <h2 class="popup-title">Join the Circle</h2>
       <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
       <p class="popup-desc">Get updates on upcoming classes, events, and offerings from Anna.</p>
-      <form name="newsletter" method="POST" data-netlify="true" class="popup-form" id="popup-form">
-        <input type="hidden" name="form-name" value="newsletter" />
-        <input type="email" name="email" placeholder="Your email address" required class="popup-input" />
-        <button type="submit" class="btn btn-gold">Subscribe</button>
-      </form>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeik7iE0JaHG8BqFo7seM37_HhCADFSTDFQJil-HuiV3vzBMQ/viewform" target="_blank" rel="noopener noreferrer" class="btn btn-gold popup-cta" onclick="closePopup()">Sign Me Up</a>
       <p class="popup-note">No spam, ever. Unsubscribe anytime.</p>
     </div>
   </div>
@@ -138,20 +134,6 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
 
     document.getElementById('newsletter-popup').addEventListener('click', function(e) {
       if (e.target === this) closePopup();
-    });
-
-    document.getElementById('popup-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var form = this;
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      }).then(function() {
-        form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
-      }).catch(function() {
-        form.innerHTML = '<p class="popup-success">Thank you! You're on the list.</p>';
-      });
     });
 
     var seen = localStorage.getItem('newsletterSeen');
@@ -209,9 +191,7 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
   .popup-title { font-size: 2.2rem; margin-bottom: 0.25rem; }
   .popup-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 1.8rem; }
   .popup-form { display: flex; flex-direction: column; gap: 1rem; }
-  .popup-input { background: rgba(255,255,255,0.05); border: 1px solid rgba(232,150,10,0.22); border-radius: 9999px; padding: 0.9rem 1.6rem; color: var(--text); font-family: var(--font-body); font-size: 0.88rem; outline: none; transition: border-color 0.3s; }
-  .popup-input::placeholder { color: rgba(240,234,222,0.35); }
-  .popup-input:focus { border-color: rgba(232,150,10,0.55); }
+  .popup-cta { display: inline-block; margin-top: 0.5rem; }
   .popup-note { font-size: 0.72rem; color: var(--muted); margin-top: 1rem; opacity: 0.55; }
   .popup-success { color: var(--gold); font-family: var(--font-display); font-size: 1.4rem; font-style: italic; padding: 1rem 0; }
 </style>
