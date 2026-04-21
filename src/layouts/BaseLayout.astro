@@ -22,6 +22,42 @@ const { title, description = "Anna Wooten — Integrative Wellness & Transformat
   </head>
   <body>
     <slot />
+    <!-- Background music -->
+    <audio id="bg-audio" src="/bg-music.mp3" loop preload="auto"></audio>
+    <button id="music-btn" aria-label="Toggle music" title="Toggle music">
+      <svg id="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <svg id="icon-playing" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </svg>
+    </button>
+
+    <script is:inline>
+      var audio = document.getElementById('bg-audio');
+      var btn   = document.getElementById('music-btn');
+      var iconMuted   = document.getElementById('icon-muted');
+      var iconPlaying = document.getElementById('icon-playing');
+      var playing = false;
+
+      function setPlaying(on) {
+        playing = on;
+        iconMuted.style.display   = on ? 'none'  : 'block';
+        iconPlaying.style.display = on ? 'block' : 'none';
+      }
+
+      btn.addEventListener('click', function() {
+        if (!playing) {
+          audio.play().then(function() { setPlaying(true); }).catch(function(){});
+        } else {
+          audio.pause();
+          setPlaying(false);
+        }
+      });
+    </script>
     <script is:inline>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
@@ -259,4 +295,26 @@ const { title, description = "Anna Wooten — Integrative Wellness & Transformat
     .container { padding: 0 1.5rem; }
     .page-hero { padding: 8rem 1.5rem 3rem; }
   }
+  /* Music toggle button */
+  #music-btn {
+    position: fixed;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    z-index: 200;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(13,10,30,0.82);
+    border: 1px solid rgba(232,150,10,0.35);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s, transform 0.2s;
+    padding: 0;
+    color: var(--gold);
+  }
+  #music-btn:hover { border-color: var(--gold); transform: scale(1.08); }
+  #music-btn svg { width: 18px; height: 18px; }
 </style>
