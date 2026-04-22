@@ -58,21 +58,38 @@ const { title, description = "Anna Wooten — Integrative Wellness & Transformat
       var cardClose = document.getElementById('music-card-close');
       var cardDismissed = localStorage.getItem('musicCardDismissed');
 
+      function showCard() {
+        if (!cardDismissed) {
+          setTimeout(function() { card.style.display = 'block'; }, 1500);
+        }
+      }
+
       cardClose.addEventListener('click', function() {
         card.style.display = 'none';
         localStorage.setItem('musicCardDismissed', '1');
+        cardDismissed = '1';
+      });
+
+      // Try autoplay with sound; if blocked by browser, fall back to muted
+      audio.play().then(function() {
+        setPlaying(true);
+        showCard();
+      }).catch(function() {
+        audio.muted = true;
+        audio.play().then(function() {
+          setPlaying(false);
+        }).catch(function() {});
       });
 
       btn.addEventListener('click', function() {
         if (!playing) {
+          audio.muted = false;
           audio.play().then(function() {
             setPlaying(true);
-            if (!cardDismissed) {
-              setTimeout(function() { card.style.display = 'block'; }, 1500);
-            }
+            showCard();
           }).catch(function(){});
         } else {
-          audio.pause();
+          audio.muted = true;
           setPlaying(false);
           card.style.display = 'none';
         }
