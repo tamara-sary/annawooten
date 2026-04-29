@@ -106,6 +106,40 @@ const { title, description = "Anna Wooten — Integrative Wellness & Transformat
         });
       }
     </script>
+    <!-- Hamburger -->
+    <button id="hamburger-btn" class="hamburger-btn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Mobile drawer -->
+    <div id="mobile-drawer" class="mobile-drawer">
+      <button id="drawer-close" class="drawer-close" aria-label="Close">&times;</button>
+      <nav class="drawer-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/work-with-me">Work With Me</a>
+        <a href="/classes">Classes</a>
+        <a href="/products">Products</a>
+        <a href="/events">Events</a>
+      </nav>
+      <a href="https://calendly.com/annawootenofficial" target="_blank" rel="noopener" class="btn btn-gold drawer-cta">Book a Consultation</a>
+    </div>
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+
+    <script is:inline>
+      var hamburger = document.getElementById('hamburger-btn');
+      var drawer    = document.getElementById('mobile-drawer');
+      var overlay   = document.getElementById('drawer-overlay');
+      var closeBtn  = document.getElementById('drawer-close');
+
+      function openDrawer()  { drawer.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeDrawer() { drawer.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+      hamburger.addEventListener('click', openDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+      overlay.addEventListener('click', closeDrawer);
+      document.querySelectorAll('.drawer-nav a').forEach(function(l){ l.addEventListener('click', closeDrawer); });
+    </script>
   </body>
 </html>
 
@@ -416,5 +450,84 @@ const { title, description = "Anna Wooten — Integrative Wellness & Transformat
   @keyframes fadeSlideUp {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
+  }
+  /* ── Hamburger ── */
+  .hamburger-btn {
+    display: none;
+    position: fixed;
+    top: 1rem; right: 1.5rem;
+    z-index: 102;
+    background: none; border: none;
+    cursor: pointer; padding: 0.4rem;
+    flex-direction: column; gap: 5px; align-items: flex-end;
+  }
+  .hamburger-btn span { display: block; height: 1.5px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+  .hamburger-btn span:nth-child(1) { width: 24px; }
+  .hamburger-btn span:nth-child(2) { width: 16px; }
+  .hamburger-btn span:nth-child(3) { width: 24px; }
+  @media (max-width: 768px) {
+    .hamburger-btn { display: flex; }
+    .nav-cta { display: none; }
+  }
+
+  /* ── Mobile drawer ── */
+  .mobile-drawer {
+    position: fixed; top: 0; right: 0;
+    width: min(300px, 85vw); height: 100vh;
+    background: rgba(10,8,25,0.98);
+    border-left: 1px solid rgba(232,150,10,0.15);
+    z-index: 500;
+    padding: 5rem 2.5rem 3rem;
+    display: flex; flex-direction: column; gap: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    overflow-y: auto;
+  }
+  .mobile-drawer.open { transform: translateX(0); }
+  .drawer-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 499; opacity: 0; pointer-events: none;
+    transition: opacity 0.35s; backdrop-filter: blur(3px);
+  }
+  .drawer-overlay.open { opacity: 1; pointer-events: all; }
+  .drawer-close {
+    position: absolute; top: 1.2rem; right: 1.5rem;
+    background: none; border: none;
+    color: rgba(240,234,222,0.5); font-size: 2rem;
+    cursor: pointer; padding: 0.3rem; line-height: 1; transition: color 0.2s;
+  }
+  .drawer-close:hover { color: var(--gold); }
+  .drawer-nav { display: flex; flex-direction: column; gap: 1.8rem; }
+  .drawer-nav a {
+    font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(240,234,222,0.75); text-decoration: none;
+    transition: color 0.2s; font-weight: 300;
+  }
+  .drawer-nav a:hover { color: var(--gold); }
+  .drawer-cta { text-align: center; margin-top: auto; }
+
+  /* ── Global mobile fixes ── */
+  @media (max-width: 768px) {
+    .page-hero { padding: 7rem 1.5rem 2.5rem; }
+    .page-hero h1 { font-size: clamp(2.2rem, 7vw, 3.5rem); }
+  }
+  @media (max-width: 480px) {
+    .container { padding: 0 1rem; }
+    .btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .section-tag { font-size: 0.7rem; }
+  }
+
+  /* ── Popup mobile ── */
+  @media (max-width: 600px) {
+    .popup-card { padding: 2.5rem 1.5rem; max-width: min(480px, 92vw); }
+    .popup-title { font-size: 1.8rem; }
+    .popup-close { min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center; }
+  }
+
+  /* ── Music card mobile ── */
+  @media (max-width: 480px) {
+    .music-card { max-width: min(220px, 82vw); right: 1rem; }
+    #music-btn { bottom: 1rem; right: 1rem; width: 40px; height: 40px; }
   }
 </style>
