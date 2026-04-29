@@ -553,7 +553,18 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     .preview-section { padding: 5rem 0; }
     .feature-section { padding: 5rem 0; }
     .final-cta { padding: 6rem 0; }
-    .modality-grid { grid-template-columns: repeat(2, 1fr); }
+    .modality-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .testimonials-track-wrap { height: 420px; }
+    .modalities { padding: 4rem 0; }
+    .preview-section { padding: 4rem 0; }
+    .about-teaser { padding: 4rem 0; }
+  }
+  @media (max-width: 480px) {
+    .combo-price { font-size: clamp(2.2rem, 8vw, 4rem); }
+    .feature-detail { font-size: 0.7rem; }
+    .events-tags span { font-size: 0.72rem; padding: 0.35rem 0.7rem; }
   }
 </style>
 
