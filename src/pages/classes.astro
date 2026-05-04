@@ -1,6 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const CALENDLY = 'https://calendly.com/annawootenofficial';
+const allFiles = await Astro.glob('../content/classes/*.md');
+const classes = allFiles
+  .filter(f => f.frontmatter.type === 'class')
+  .sort((a, b) => (a.frontmatter.order || 0) - (b.frontmatter.order || 0));
+const combo = allFiles.find(f => f.frontmatter.type === 'combo');
 ---
 <BaseLayout title="Live Classes — Anna Wooten" description="Weekly live Zoom classes: Transformative Breathwork and Women's Group, every Tuesday.">
   <nav class="nav">
@@ -21,70 +26,52 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     <p>Weekly Zoom classes designed to support nervous system regulation, subconscious awareness, and personal growth in a structured group setting.</p>
   </div>
 
-  <!-- Breathwork Class -->
-  <section class="class-section">
-    <div class="container">
-      <div class="class-grid">
-        <div class="class-info">
-          <p class="section-tag">Tuesday Evenings</p>
-          <h2>Transformative Breathwork</h2>
-          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>A guided breathwork experience using Biodynamic Breathwork and Trauma Release techniques. Through conscious breathing and body awareness, participants explore the connection between breath, the nervous system, and subconscious emotional patterns.</p>
-          <p>These sessions focus on regulation, release of stored tension, and deeper embodiment.</p>
-          <div class="class-meta">
-            <div class="meta-row"><span class="meta-label">Schedule</span><span>Tuesdays &bull; 6:00–7:15 PM CST</span></div>
-            <div class="meta-row"><span class="meta-label">Format</span><span>Live Zoom</span></div>
-            <div class="meta-row"><span class="meta-label">Drop-in</span><span class="price-text">$40</span></div>
-            <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">$129 / month</span></div>
+  {classes.map((cls) => (
+    <section class={`class-section${cls.frontmatter.layout === 'reverse' ? ' alt' : ''}`}>
+      <div class="container">
+        <div class={`class-grid${cls.frontmatter.layout === 'reverse' ? ' reverse' : ''}`}>
+          <div class="class-info">
+            <p class="section-tag">{cls.frontmatter.tag}</p>
+            <h2>{cls.frontmatter.title}</h2>
+            <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+            <p>{cls.frontmatter.para1}</p>
+            {cls.frontmatter.para2 && <p>{cls.frontmatter.para2}</p>}
+            <div class="class-meta">
+              <div class="meta-row"><span class="meta-label">Schedule</span><span>{cls.frontmatter.schedule}</span></div>
+              <div class="meta-row"><span class="meta-label">Format</span><span>{cls.frontmatter.format}</span></div>
+              {cls.frontmatter.drop_in_price && (
+                <div class="meta-row"><span class="meta-label">Drop-in</span><span class="price-text">{cls.frontmatter.drop_in_price}</span></div>
+              )}
+              {cls.frontmatter.monthly_price && (
+                <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">{cls.frontmatter.monthly_price}</span></div>
+              )}
+            </div>
+            <a href={cls.frontmatter.enroll_url || '#'} class="btn btn-gold">Enroll Now</a>
           </div>
-          <a href="#" class="btn btn-gold">Enroll Now</a>
-        </div>
-       <div class="class-visual bw-visual" style="background-image: url('/IMG_2992 (2).jpeg'); background-size: cover; background-position: center top;">
-          <div class="visual-label">Breathwork</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Women's Group -->
-  <section class="class-section alt">
-    <div class="container">
-      <div class="class-grid reverse">
-      <div class="class-visual wg-visual" style="background-image: url('/IMG_9796.JPG'); background-size: cover; background-position: center;">
-          <div class="visual-label">Women's Group</div>
-        </div>
-        <div class="class-info">
-          <p class="section-tag">Tuesday Evenings</p>
-          <h2>Women's Group</h2>
-          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>A facilitated weekly group designed for deeper emotional awareness, reflection, and connection among women. This space combines guided discussion, meditation, sensuality, empowerment, and reflective practices.</p>
-          <p>The group setting allows participants to witness and be witnessed — offering insight, accountability, and support within a consistent and supportive community container.</p>
-          <div class="class-meta">
-            <div class="meta-row"><span class="meta-label">Schedule</span><span>Tuesdays &bull; 7:30–9:00 PM CST</span></div>
-            <div class="meta-row"><span class="meta-label">Format</span><span>Live Zoom</span></div>
-            <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">$149 / month</span></div>
+          <div class="class-visual" style={`background-image: url('${cls.frontmatter.image}'); background-size: cover; background-position: ${cls.frontmatter.image_position || 'center'};`}>
+            <div class="visual-label">{cls.frontmatter.title}</div>
           </div>
-          <a href="#" class="btn btn-gold">Enroll Now</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  ))}
 
-  <!-- Combined offer -->
-  <section class="combo-section">
-    <div class="container">
-      <div class="combo-card">
-        <span class="combo-badge">Best Value</span>
-        <p class="section-tag center">Attend Both Classes</p>
-        <h2>Combined Membership</h2>
-        <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
-        <p>Women who participate in both Transformative Breathwork and Women's Group receive a combined monthly membership rate.</p>
-        <div class="combo-price">$229 <span>/ month</span></div>
-        <p class="combo-save">Save $49 compared to enrolling separately</p>
-        <a href="#" class="btn btn-gold">Enroll in Both</a>
+  {combo && (
+    <section class="combo-section">
+      <div class="container">
+        <div class="combo-card">
+          <span class="combo-badge">Best Value</span>
+          <p class="section-tag center">Attend Both Classes</p>
+          <h2>Combined Membership</h2>
+          <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
+          <p>{combo.frontmatter.description}</p>
+          <div class="combo-price">{combo.frontmatter.price} <span>{combo.frontmatter.price_period}</span></div>
+          <p class="combo-save">{combo.frontmatter.save_text}</p>
+          <a href={combo.frontmatter.enroll_url || '#'} class="btn btn-gold">Enroll in Both</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Newsletter Popup -->
   <div id="newsletter-popup" class="popup-overlay" role="dialog" aria-modal="true">
