@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
 const CALENDLY = 'https://calendly.com/annawootenofficial';
-const allFiles = await Astro.glob('../content/classes/*.md');
-const classes = allFiles
-  .filter(f => f.frontmatter.type === 'class')
-  .sort((a, b) => (a.frontmatter.order || 0) - (b.frontmatter.order || 0));
-const combo = allFiles.find(f => f.frontmatter.type === 'combo');
+const allEntries = await getCollection('classes');
+const classes = allEntries
+  .filter(e => e.data.type === 'class')
+  .sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+const combo = allEntries.find(e => e.data.type === 'combo');
 ---
 <BaseLayout title="Live Classes — Anna Wooten" description="Weekly live Zoom classes: Transformative Breathwork and Women's Group, every Tuesday.">
   <nav class="nav">
@@ -26,30 +28,30 @@ const combo = allFiles.find(f => f.frontmatter.type === 'combo');
     <p>Weekly Zoom classes designed to support nervous system regulation, subconscious awareness, and personal growth in a structured group setting.</p>
   </div>
 
-  {classes.map((cls) => (
-    <section class={`class-section${cls.frontmatter.layout === 'reverse' ? ' alt' : ''}`}>
+  {classes.map((entry) => (
+    <section class={`class-section${entry.data.layout === 'reverse' ? ' alt' : ''}`}>
       <div class="container">
-        <div class={`class-grid${cls.frontmatter.layout === 'reverse' ? ' reverse' : ''}`}>
+        <div class={`class-grid${entry.data.layout === 'reverse' ? ' reverse' : ''}`}>
           <div class="class-info">
-            <p class="section-tag">{cls.frontmatter.tag}</p>
-            <h2>{cls.frontmatter.title}</h2>
+            <p class="section-tag">{entry.data.tag}</p>
+            <h2>{entry.data.title}</h2>
             <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-            <p>{cls.frontmatter.para1}</p>
-            {cls.frontmatter.para2 && <p>{cls.frontmatter.para2}</p>}
+            <p>{entry.data.para1}</p>
+            {entry.data.para2 && <p>{entry.data.para2}</p>}
             <div class="class-meta">
-              <div class="meta-row"><span class="meta-label">Schedule</span><span>{cls.frontmatter.schedule}</span></div>
-              <div class="meta-row"><span class="meta-label">Format</span><span>{cls.frontmatter.format}</span></div>
-              {cls.frontmatter.drop_in_price && (
-                <div class="meta-row"><span class="meta-label">Drop-in</span><span class="price-text">{cls.frontmatter.drop_in_price}</span></div>
+              <div class="meta-row"><span class="meta-label">Schedule</span><span>{entry.data.schedule}</span></div>
+              <div class="meta-row"><span class="meta-label">Format</span><span>{entry.data.format}</span></div>
+              {entry.data.drop_in_price && (
+                <div class="meta-row"><span class="meta-label">Drop-in</span><span class="price-text">{entry.data.drop_in_price}</span></div>
               )}
-              {cls.frontmatter.monthly_price && (
-                <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">{cls.frontmatter.monthly_price}</span></div>
+              {entry.data.monthly_price && (
+                <div class="meta-row"><span class="meta-label">Monthly</span><span class="price-text">{entry.data.monthly_price}</span></div>
               )}
             </div>
-            <a href={cls.frontmatter.enroll_url || '#'} class="btn btn-gold">Enroll Now</a>
+            <a href={entry.data.enroll_url ?? '#'} class="btn btn-gold">Enroll Now</a>
           </div>
-          <div class="class-visual" style={`background-image: url('${cls.frontmatter.image}'); background-size: cover; background-position: ${cls.frontmatter.image_position || 'center'};`}>
-            <div class="visual-label">{cls.frontmatter.title}</div>
+          <div class="class-visual" style={`background-image: url('${entry.data.image}'); background-size: cover; background-position: ${entry.data.image_position ?? 'center'};`}>
+            <div class="visual-label">{entry.data.title}</div>
           </div>
         </div>
       </div>
@@ -64,10 +66,10 @@ const combo = allFiles.find(f => f.frontmatter.type === 'combo');
           <p class="section-tag center">Attend Both Classes</p>
           <h2>Combined Membership</h2>
           <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>{combo.frontmatter.description}</p>
-          <div class="combo-price">{combo.frontmatter.price} <span>{combo.frontmatter.price_period}</span></div>
-          <p class="combo-save">{combo.frontmatter.save_text}</p>
-          <a href={combo.frontmatter.enroll_url || '#'} class="btn btn-gold">Enroll in Both</a>
+          <p>{combo.data.description}</p>
+          <div class="combo-price">{combo.data.price} <span>{combo.data.price_period}</span></div>
+          <p class="combo-save">{combo.data.save_text}</p>
+          <a href={combo.data.enroll_url ?? '#'} class="btn btn-gold">Enroll in Both</a>
         </div>
       </div>
     </section>
@@ -91,13 +93,10 @@ const combo = allFiles.find(f => f.frontmatter.type === 'combo');
       var popup = document.getElementById('newsletter-popup');
       if (popup) popup.classList.remove('popup-visible');
     }
-
     document.getElementById('popup-close-btn').addEventListener('click', closePopup);
-
     document.getElementById('newsletter-popup').addEventListener('click', function(e) {
       if (e.target === this) closePopup();
     });
-
     var seen = localStorage.getItem('newsletterSeen');
     var now = Date.now();
     if (!seen || now - parseInt(seen) > 7 * 24 * 60 * 60 * 1000) {
