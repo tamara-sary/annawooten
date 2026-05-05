@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import about from '../content/about.json';
 const CALENDLY = 'https://calendly.com/annawootenofficial';
 ---
 <BaseLayout title="About — Anna Wooten" description="Anna Wooten is an integrative practitioner, coach, and facilitator working at the intersection of the nervous system, the subconscious mind, and personal transformation.">
@@ -20,22 +21,17 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     <div class="container">
       <div class="bio-grid">
         <div class="bio-img-wrap">
-          <img src="/anna.jpg" alt="Anna Wooten" class="bio-photo" />
+          <img src={about.photo} alt="Anna Wooten" class="bio-photo" />
         </div>
         <div class="bio-text">
           <p class="section-tag">About the Guide</p>
           <h1>Anna Wooten</h1>
           <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>Anna Wooten is an integrative practitioner, coach, and facilitator who works at the intersection of the nervous system, the subconscious mind, and personal transformation. Her work focuses on helping individuals understand the deeper patterns that shape their beliefs, emotional responses, and behaviors — and supporting them in creating meaningful internal change.</p>
-          <p>Her approach integrates breathwork, hypnosis, meditation, somatic practices, and intuitive guidance to help clients access the subconscious layers of the mind where many long-standing patterns are formed.</p>
-          <p>Anna is currently a graduate student in Clinical Mental Health Counseling at Naropa University, a program known for integrating contemplative psychology, mindfulness, and body-based approaches to healing.</p>
+          <p>{about.bio_para1}</p>
+          <p>{about.bio_para2}</p>
+          <p>{about.bio_para3}</p>
           <div class="credentials">
-            <span>&#10022; Certified Integrative Trauma Coach</span>
-            <span>&#10022; Certified Consulting Hypnotist</span>
-            <span>&#10022; Reiki Master</span>
-            <span>&#10022; Sound Healing Practitioner</span>
-            <span>&#10022; Meditation Teacher</span>
-            <span>&#10022; Graduate Student, Naropa University</span>
+            {about.credentials.map((c: string) => <span>&#10022; {c}</span>)}
           </div>
         </div>
       </div>
@@ -46,14 +42,14 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   <section class="about-story">
     <div class="container">
       <p class="section-tag">My Story</p>
-      <h2>How I got here</h2>
+      <h2>{about.story_heading}</h2>
       <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
       <div class="story-text">
-        <p>By most definitions, I was successful. I did well in school, built a career, ran a technology company, and created the life many people aim for. From the outside everything looked good. Inside, I felt disconnected from my body and from any real sense of joy or meaning.</p>
-        <p>When my health began to break down through autoimmune challenges, I started searching for answers. My hair was falling out, my cycle stopped, and I knew something deeper was happening in my body. Rather than accepting that something was "wrong" with me, I began exploring nutrition, emotional healing, meditation, and spiritual practice.</p>
-        <p>What began as a desire to feel better slowly became a devotion to understanding myself. Through deep personal work, I learned to listen to my body, face difficult emotions, and reconnect with a deeper inner wisdom that had always been present beneath the noise of fear and conditioning.</p>
-        <p>My path eventually led me through profound life changes — moving across the country, ending my marriage, and committing to a deeper exploration of healing practices. Over time, the combination of meditation, hypnosis, Reiki, sound healing, and intentional self-reflection helped me experience real transformation.</p>
-        <p>Today I support others in their own process of reconnection and self-understanding. My work integrates both scientific and spiritual perspectives because both were essential in my own healing. I believe that when we care for our physical body, listen to our emotions, and reconnect with our deeper self, we move toward a more natural state of health and alignment.</p>
+        <p>{about.story_para1}</p>
+        <p>{about.story_para2}</p>
+        <p>{about.story_para3}</p>
+        <p>{about.story_para4}</p>
+        <p>{about.story_para5}</p>
       </div>
     </div>
   </section>
@@ -65,36 +61,15 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
       <h2 class="section-title center">Modalities</h2>
       <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
       <div class="modality-cards">
-        <div class="mod-card">
-          <h3>Hypnosis</h3>
-          <p>A focused, relaxed state of awareness where the subconscious mind becomes more accessible. We work directly with internal patterns, beliefs, and emotional imprints at a deeper level than conscious thought alone. You remain aware and in control throughout.</p>
-          <div class="benefits"><span>Subconscious pattern access</span><span>Belief repatterning</span><span>Deeper internal shifts</span><span>Greater clarity</span></div>
-        </div>
-        <div class="mod-card">
-          <h3>Breathwork</h3>
-          <p>A guided somatic practice using intentional breathing patterns to access deeper layers of the nervous system and subconscious. Trained in Biodynamic Breathwork, which combines conscious connected breathing with body awareness to support emotional processing.</p>
-          <div class="benefits"><span>Nervous system regulation</span><span>Release of stored tension</span><span>Emotional integration</span><span>Body awareness</span></div>
-        </div>
-        <div class="mod-card">
-          <h3>Sound Healing</h3>
-          <p>A meditative practice using vibration and tone — crystal singing bowls and resonant instruments — to support relaxation and nervous system regulation. Creates sustained frequencies the body naturally responds to, encouraging deep calm and receptivity.</p>
-          <div class="benefits"><span>Deep relaxation</span><span>Stress reduction</span><span>Present-moment awareness</span><span>Restorative experience</span></div>
-        </div>
-        <div class="mod-card">
-          <h3>Reiki</h3>
-          <p>An energy healing practice working with the body's natural energetic system to support balance and restoration. Offered in person or at a distance, through light touch or hands placed just above the body. Subtle, non-invasive, and deeply calming.</p>
-          <div class="benefits"><span>Nervous system regulation</span><span>Energetic balance</span><span>Deep relaxation</span><span>Integration support</span></div>
-        </div>
-        <div class="mod-card">
-          <h3>Meditation</h3>
-          <p>Structured and intentional — including both mindfulness-based meditation and guided visualization. Mindfulness strengthens present-moment awareness; visualization engages internal imagery to support clarity, alignment, and intentional growth.</p>
-          <div class="benefits"><span>Self-awareness</span><span>Emotional regulation</span><span>Mental clarity</span><span>Intuition</span></div>
-        </div>
-        <div class="mod-card">
-          <h3>Spiritual Guidance</h3>
-          <p>Offered as a form of reflective spiritual guidance in a focused, meditative state. Rather than predicting the future, the process explores patterns, themes, and questions present in your life — providing perspective and space to reflect from a broader viewpoint.</p>
-          <div class="benefits"><span>Expanded perspective</span><span>Pattern clarity</span><span>Intuitive connection</span><span>Spiritual exploration</span></div>
-        </div>
+        {about.modalities.map((m: any) => (
+          <div class="mod-card">
+            <h3>{m.title}</h3>
+            <p>{m.description}</p>
+            <div class="benefits">
+              {m.benefits.map((b: string) => <span>{b}</span>)}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>
