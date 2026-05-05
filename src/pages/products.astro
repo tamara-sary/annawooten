@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import pg from '../content/products.json';
 const CALENDLY = 'https://calendly.com/annawootenofficial';
-const SHOPIFY = '#'; // Replace with Shopify store URL
 ---
 <BaseLayout title="Digital Products — Anna Wooten" description="Self-guided hypnosis programs combining subconscious work, sound healing, and reflective exercises.">
   <nav class="nav">
@@ -19,7 +19,7 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
   <div class="page-hero">
     <p class="section-tag">Self-Guided Programs</p>
     <h1>Digital Products</h1>
-    <p>Hypnosis, sound healing, and reflective exercises designed to help you work with the subconscious mind at your own pace — repeatable, deeply supportive, and designed for lasting change.</p>
+    <p>{pg.hero_description}</p>
   </div>
 
   <section class="products-intro">
@@ -27,87 +27,44 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
       <div class="how-it-works">
         <p class="section-tag center">How It Works</p>
         <div class="steps">
-          <div class="step"><span class="step-num">01</span><p>Purchase your program and receive instant access via email</p></div>
-          <div class="step"><span class="step-num">02</span><p>Follow the guided hypnosis tracks at your own pace</p></div>
-          <div class="step"><span class="step-num">03</span><p>Use the journaling prompts to integrate insights after each session</p></div>
-          <div class="step"><span class="step-num">04</span><p>Repeat regularly — the subconscious absorbs new patterns over time</p></div>
+          {pg.how_it_works.map((step: string, i: number) => (
+            <div class="step">
+              <span class="step-num">{String(i + 1).padStart(2, '0')}</span>
+              <p>{step}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Products -->
   <section class="products-section">
     <div class="container">
-      <div class="product-full">
-        <div class="product-text">
-          <p class="section-tag">Program 01</p>
-          <h2>Body Transformation Program</h2>
-          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>This program focuses on the subconscious patterns that influence habits, identity, and relationship with the body. Through guided hypnosis and reflective practices, it supports shifts in mindset, self-perception, and consistency with health behaviors.</p>
-          <p>Many people find that lasting change occurs when internal beliefs and identity align with the goals they are trying to achieve. This program helps create that alignment by working with the deeper layers of the mind.</p>
-          <div class="includes-list">
-            <p class="includes-title">Includes:</p>
-            <div class="include-item">&#10022; Hypnosis tracks focused on mindset and identity change</div>
-            <div class="include-item">&#10022; Sound healing background to support relaxation and focus</div>
-            <div class="include-item">&#10022; Guided journaling prompts for integration</div>
-            <div class="include-item">&#10022; Repeatable practices to reinforce new patterns</div>
+      {pg.products.map((prod: any, i: number) => (
+        <>
+          {i > 0 && <div class="product-divider"></div>}
+          <div class="product-full">
+            <div class="product-text">
+              <p class="section-tag">{prod.num}</p>
+              <h2>{prod.title}</h2>
+              <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
+              <p>{prod.para1}</p>
+              <p>{prod.para2}</p>
+              <div class="includes-list">
+                <p class="includes-title">Includes:</p>
+                {prod.includes.map((item: string) => (
+                  <div class="include-item">&#10022; {item}</div>
+                ))}
+              </div>
+            </div>
+            <div class={`product-cta-box${prod.featured ? ' featured-box' : ''}`}>
+              <div class="cta-price">{prod.price}</div>
+              <a href={prod.buy_url || '#'} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
+              <p class="cta-note">Delivered via email after purchase</p>
+            </div>
           </div>
-        </div>
-        <div class="product-cta-box">
-          <div class="cta-price">$197</div>
-          <a href={SHOPIFY} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
-          <p class="cta-note">Delivered via email after purchase</p>
-        </div>
-      </div>
-
-      <div class="product-divider"></div>
-
-      <div class="product-full">
-        <div class="product-text">
-          <p class="section-tag">Program 02</p>
-          <h2>Fertility Hypnosis Program</h2>
-          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>This program is designed for women who want to support their fertility journey by creating a calm and supportive internal environment. The hypnosis sessions focus on relaxation, emotional regulation, and cultivating a sense of trust and connection with the body.</p>
-          <p>While this program does not replace medical care, many women find that reducing stress and strengthening their relationship with their body can be an important part of the process.</p>
-          <div class="includes-list">
-            <p class="includes-title">Includes:</p>
-            <div class="include-item">&#10022; Guided hypnosis sessions focused on relaxation and trust in the body</div>
-            <div class="include-item">&#10022; Sound healing background to support nervous system regulation</div>
-            <div class="include-item">&#10022; Reflective journaling prompts for emotional processing</div>
-            <div class="include-item">&#10022; Practices designed for repeated listening</div>
-          </div>
-        </div>
-        <div class="product-cta-box featured-box">
-          <div class="cta-price">$297</div>
-          <a href={SHOPIFY} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
-          <p class="cta-note">Delivered via email after purchase</p>
-        </div>
-      </div>
-
-      <div class="product-divider"></div>
-
-      <div class="product-full">
-        <div class="product-text">
-          <p class="section-tag">Program 03</p>
-          <h2>Connect to Your Higher Self</h2>
-          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-          <p>This program focuses on developing deeper self-awareness and connection with your inner guidance. Through hypnosis, meditation, and reflective practices, it supports clarity, intuition, and alignment with personal direction.</p>
-          <p>The sessions help quiet mental noise and create space for insight, allowing you to reflect on your life path, values, and decisions with greater perspective.</p>
-          <div class="includes-list">
-            <p class="includes-title">Includes:</p>
-            <div class="include-item">&#10022; Guided hypnosis sessions for inner awareness and reflection</div>
-            <div class="include-item">&#10022; Sound healing background for relaxation and focus</div>
-            <div class="include-item">&#10022; Journaling prompts to deepen insight</div>
-            <div class="include-item">&#10022; Repeatable listening practices</div>
-          </div>
-        </div>
-        <div class="product-cta-box">
-          <div class="cta-price">$197</div>
-          <a href={SHOPIFY} target="_blank" class="btn btn-gold" style="width:100%;text-align:center;">Get Instant Access</a>
-          <p class="cta-note">Delivered via email after purchase</p>
-        </div>
-      </div>
+        </>
+      ))}
     </div>
   </section>
 
@@ -145,6 +102,12 @@ const SHOPIFY = '#'; // Replace with Shopify store URL
       }, 3000);
     }
   </script>
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
+  </footer>
+</BaseLayout>
+
+
   <footer class="footer">
     <p>&copy; {new Date().getFullYear()} Anna Wooten. All rights reserved.</p>
   </footer>
