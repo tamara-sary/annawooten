@@ -1,0 +1,42 @@
+{
+  "contact_email": "hello@annawooten.com",
+  "upcoming_text": "Upcoming events are announced through email and social media. Each event is unique — inquire below to be added to the list or ask about what's coming next.",
+  "offerings": [
+    {
+      "title": "Sound Bath",
+      "description": "Crystal bowls and resonant instruments create a deeply restorative and immersive listening experience."
+    },
+    {
+      "title": "Guided Breathwork",
+      "description": "Live guided breathwork with personalized healing music to support emotional and energetic release."
+    },
+    {
+      "title": "Women's Circles",
+      "description": "A facilitated gathering for reflection, conversation, meditation, and shared support."
+    },
+    {
+      "title": "Cacao Ceremonies",
+      "description": "A heart-centered gathering using ceremonial cacao, meditation, and guided reflection."
+    },
+    {
+      "title": "Breathwork & Journaling",
+      "description": "Guided breathwork followed by reflective writing to process insights and emotions."
+    },
+    {
+      "title": "Somatic Experiences",
+      "description": "Immersive somatic and sound journeys for deepening sensory awareness and body connection."
+    }
+  ],
+  "private_para1": "Private experiences are available for small groups, executive teams, and organizations seeking a restorative or reflective experience. These can be designed as private workshops, leadership reset sessions, or retreat-style experiences that support mental clarity, stress regulation, and deeper connection.",
+  "private_para2": "Past private work has included women's retreats, men's retreat breathwork, corporate wellness, and multi-hour immersive experiences.",
+  "past_count": "100+",
+  "past_label": "Community events, workshops & retreats facilitated",
+  "past_events": [
+    "Emotional Alchemy Series",
+    "Surrendered: Sensory Immersion",
+    "Double Sound Bath Experiences",
+    "Deep Rest: Restorative Yoga & Reiki",
+    "Acupuncture & Sound Bath: The Reset",
+    "Women's Day Retreats"
+  ]
+}
