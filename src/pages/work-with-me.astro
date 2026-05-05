@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import wm from '../content/work-with-me.json';
 const CALENDLY = 'https://calendly.com/annawootenofficial';
 ---
 <BaseLayout title="Work With Me — Anna Wooten" description="1:1 Transformation: a personalized three-month container for women ready for meaningful internal change.">
@@ -16,9 +17,9 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   </nav>
 
   <div class="page-hero">
-    <p class="section-tag">1:1 Transformation</p>
-    <h1>A three-month container for meaningful change</h1>
-    <p>Personalized, collaborative, and tailored entirely to you.</p>
+    <p class="section-tag">{wm.hero_tag}</p>
+    <h1>{wm.hero_heading}</h1>
+    <p>{wm.hero_description}</p>
   </div>
 
   <!-- What this is -->
@@ -26,29 +27,17 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     <div class="container wm-intro">
       <div>
         <p class="section-tag">The Container</p>
-        <h2>Designed for women ready to go deeper</h2>
+        <h2>{wm.container_heading}</h2>
         <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
-        <p>This is a personalized three-month container for women who want focused support and meaningful internal change. Rather than a single session approach, this container allows time to explore patterns, build awareness, and integrate new ways of relating to yourself.</p>
-        <p>Much of our behavior, emotional responses, and beliefs are shaped by the subconscious mind — storing memories, learned patterns, protective responses, and internal narratives formed throughout life. When we work with the subconscious directly, lasting change becomes more possible.</p>
-        <p>Sessions take place <strong>twice per month</strong> and last approximately <strong>60–75 minutes</strong>. Each session is guided by what is present and what will be most supportive for your process.</p>
+        <p>{wm.container_para1}</p>
+        <p>{wm.container_para2}</p>
+        <p>{wm.container_para3}</p>
       </div>
       <div class="wm-details">
-        <div class="detail-card">
-          <p class="detail-label">Duration</p>
-          <p class="detail-value">3 Months</p>
-        </div>
-        <div class="detail-card">
-          <p class="detail-label">Sessions</p>
-          <p class="detail-value">Twice / Month</p>
-        </div>
-        <div class="detail-card">
-          <p class="detail-label">Length</p>
-          <p class="detail-value">60–75 Min</p>
-        </div>
-        <div class="detail-card">
-          <p class="detail-label">Format</p>
-          <p class="detail-value">1:1 Online</p>
-        </div>
+        <div class="detail-card"><p class="detail-label">Duration</p><p class="detail-value">{wm.duration}</p></div>
+        <div class="detail-card"><p class="detail-label">Sessions</p><p class="detail-value">{wm.sessions}</p></div>
+        <div class="detail-card"><p class="detail-label">Length</p><p class="detail-value">{wm.length}</p></div>
+        <div class="detail-card"><p class="detail-label">Format</p><p class="detail-value">{wm.format}</p></div>
       </div>
     </div>
   </section>
@@ -60,30 +49,18 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
       <h2 class="section-title center">Three layers of support</h2>
       <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
       <div class="pillars-grid">
-        <div class="pillar-full">
-          <div class="pillar-header">
-            <span class="pillar-num">01</span>
-            <h3>Support Your Mind</h3>
+        {wm.pillars.map((p: any) => (
+          <div class="pillar-full">
+            <div class="pillar-header">
+              <span class="pillar-num">{p.num}</span>
+              <h3>{p.title}</h3>
+            </div>
+            <p>{p.description}</p>
+            <div class="tool-chips">
+              {p.tools.map((t: string) => <span>{t}</span>)}
+            </div>
           </div>
-          <p>Hypnosis and meditation help access the subconscious mind where beliefs, emotional memories, and internal patterns are stored. These practices allow us to bring awareness to unconscious patterns and create space for new perspectives and internal shifts.</p>
-          <div class="tool-chips"><span>Hypnosis</span><span>Meditation</span></div>
-        </div>
-        <div class="pillar-full">
-          <div class="pillar-header">
-            <span class="pillar-num">02</span>
-            <h3>Support Your Body</h3>
-          </div>
-          <p>Breathwork and Reiki support the body's nervous system and energetic balance. These practices help release stored tension and invite the body into a more regulated and restorative state.</p>
-          <div class="tool-chips"><span>Breathwork</span><span>Reiki</span><span>Sound Healing</span></div>
-        </div>
-        <div class="pillar-full">
-          <div class="pillar-header">
-            <span class="pillar-num">03</span>
-            <h3>Support Your Soul</h3>
-          </div>
-          <p>Intuitive guidance and coaching may be included when appropriate — offering intuitive reflection and insight that support a deeper understanding of your personal path and inner experience.</p>
-          <div class="tool-chips"><span>Intuitive Guidance</span><span>Spiritual Coaching</span></div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
@@ -92,13 +69,11 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   <section class="wm-section">
     <div class="container wm-for">
       <p class="section-tag">Is This For You?</p>
-      <h2>This container is designed for women who are ready to explore themselves more deeply and want consistent support through that process.</h2>
+      <h2>{wm.for_heading}</h2>
       <div class="for-list">
-        <div class="for-item">&#10022; You sense there are patterns at a deeper level you haven't been able to shift on your own</div>
-        <div class="for-item">&#10022; You want support that goes beyond talk — working with body, mind, and deeper self</div>
-        <div class="for-item">&#10022; You're ready for consistent, structured support over time</div>
-        <div class="for-item">&#10022; You value an approach that integrates both scientific and spiritual perspectives</div>
-        <div class="for-item">&#10022; You're committed to your own process and willing to do the inner work</div>
+        {wm.for_items.map((item: string) => (
+          <div class="for-item">&#10022; {item}</div>
+        ))}
       </div>
     </div>
   </section>
@@ -109,10 +84,7 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
       <p class="section-tag center">Next Step</p>
       <h2 class="section-title center">Schedule a Free Consultation</h2>
       <div class="divider center"><span></span><span class="diamond">&#10022;</span><span></span></div>
-      <p class="booking-desc">
-        A free 30-minute conversation to explore whether this work is right for you.
-        No commitment required — just an honest conversation about where you are and where you want to go.
-      </p>
+      <p class="booking-desc">{wm.booking_description}</p>
       <div class="calendly-inline-widget" data-url={CALENDLY} style="min-width:320px;height:700px;"></div>
     </div>
   </section>
