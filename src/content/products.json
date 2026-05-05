@@ -1,0 +1,56 @@
+{
+  "hero_description": "Hypnosis, sound healing, and reflective exercises designed to help you work with the subconscious mind at your own pace — repeatable, deeply supportive, and designed for lasting change.",
+  "how_it_works": [
+    "Purchase your program and receive instant access via email",
+    "Follow the guided hypnosis tracks at your own pace",
+    "Use the journaling prompts to integrate insights after each session",
+    "Repeat regularly — the subconscious absorbs new patterns over time"
+  ],
+  "products": [
+    {
+      "num": "Program 01",
+      "title": "Body Transformation Program",
+      "para1": "This program focuses on the subconscious patterns that influence habits, identity, and relationship with the body. Through guided hypnosis and reflective practices, it supports shifts in mindset, self-perception, and consistency with health behaviors.",
+      "para2": "Many people find that lasting change occurs when internal beliefs and identity align with the goals they are trying to achieve. This program helps create that alignment by working with the deeper layers of the mind.",
+      "includes": [
+        "Hypnosis tracks focused on mindset and identity change",
+        "Sound healing background to support relaxation and focus",
+        "Guided journaling prompts for integration",
+        "Repeatable practices to reinforce new patterns"
+      ],
+      "price": "$197",
+      "buy_url": "#",
+      "featured": false
+    },
+    {
+      "num": "Program 02",
+      "title": "Fertility Hypnosis Program",
+      "para1": "This program is designed for women who want to support their fertility journey by creating a calm and supportive internal environment. The hypnosis sessions focus on relaxation, emotional regulation, and cultivating a sense of trust and connection with the body.",
+      "para2": "While this program does not replace medical care, many women find that reducing stress and strengthening their relationship with their body can be an important part of the process.",
+      "includes": [
+        "Guided hypnosis sessions focused on relaxation and trust in the body",
+        "Sound healing background to support nervous system regulation",
+        "Reflective journaling prompts for emotional processing",
+        "Practices designed for repeated listening"
+      ],
+      "price": "$297",
+      "buy_url": "#",
+      "featured": true
+    },
+    {
+      "num": "Program 03",
+      "title": "Connect to Your Higher Self",
+      "para1": "This program focuses on developing deeper self-awareness and connection with your inner guidance. Through hypnosis, meditation, and reflective practices, it supports clarity, intuition, and alignment with personal direction.",
+      "para2": "The sessions help quiet mental noise and create space for insight, allowing you to reflect on your life path, values, and decisions with greater perspective.",
+      "includes": [
+        "Guided hypnosis sessions for inner awareness and reflection",
+        "Sound healing background for relaxation and focus",
+        "Journaling prompts to deepen insight",
+        "Repeatable listening practices"
+      ],
+      "price": "$197",
+      "buy_url": "#",
+      "featured": false
+    }
+  ]
+}
