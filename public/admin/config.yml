@@ -6,58 +6,149 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  # ── Homepage Content ──
+
+  # ── Pages (single-file collections) ──────────────────────────
   - name: "pages"
     label: "Pages"
     files:
+
       - label: "Homepage"
         name: "homepage"
         file: "src/content/homepage.json"
         fields:
-          # Hero Section
           - label: "Hero Section"
             name: "hero"
             widget: "object"
             fields:
-              - { label: "Tagline", name: "tagline", widget: "string", default: "Welcome" }
-              - { label: "Heading", name: "heading", widget: "string", default: "Your journey to wellness starts here" }
+              - { label: "Tagline", name: "tagline", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
-              - { label: "Button Text", name: "button_text", widget: "string", default: "Explore Sessions" }
-
-          # About Section
+              - { label: "Button Text", name: "button_text", widget: "string" }
           - label: "About Section"
             name: "about"
             widget: "object"
             fields:
-              - { label: "Heading", name: "heading", widget: "string", default: "Hi, I'm Anna" }
+              - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Bio", name: "bio", widget: "markdown" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
-
-          # Contact Section
           - label: "Contact Section"
             name: "contact"
             widget: "object"
             fields:
-              - { label: "Heading", name: "heading", widget: "string", default: "Ready to start?" }
+              - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Email", name: "email", widget: "string" }
-              - { label: "Button Text", name: "button_text", widget: "string", default: "Send me an email" }
+              - { label: "Button Text", name: "button_text", widget: "string" }
 
-  # ── Sessions / Services ──
-  - name: "sessions"
-    label: "Sessions"
-    folder: "src/content/services"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Duration", name: "duration", widget: "string", hint: "e.g. 60 min, 4 weeks" }
-      - { label: "Price", name: "price", widget: "string", hint: "e.g. €80" }
-      - { label: "Featured", name: "featured", widget: "boolean", default: false, hint: "Highlight this session" }
-      - { label: "Order", name: "order", widget: "number", default: 0, hint: "Display order (lower = first)" }
+      - label: "About"
+        name: "about"
+        file: "src/content/about.json"
+        fields:
+          - { label: "Profile Photo", name: "photo", widget: "image" }
+          - { label: "Bio — Paragraph 1", name: "bio_para1", widget: "text" }
+          - { label: "Bio — Paragraph 2", name: "bio_para2", widget: "text" }
+          - { label: "Bio — Paragraph 3", name: "bio_para3", widget: "text" }
+          - label: "Credentials"
+            name: "credentials"
+            widget: "list"
+            field: { label: "Credential", name: "credential", widget: "string" }
+          - { label: "Story Heading", name: "story_heading", widget: "string" }
+          - { label: "Story — Paragraph 1", name: "story_para1", widget: "text" }
+          - { label: "Story — Paragraph 2", name: "story_para2", widget: "text" }
+          - { label: "Story — Paragraph 3", name: "story_para3", widget: "text" }
+          - { label: "Story — Paragraph 4", name: "story_para4", widget: "text" }
+          - { label: "Story — Paragraph 5", name: "story_para5", widget: "text" }
+          - label: "Modalities"
+            name: "modalities"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Benefits"
+                name: "benefits"
+                widget: "list"
+                field: { label: "Benefit", name: "benefit", widget: "string" }
 
-  # ── Classes ──
+      - label: "Work With Me"
+        name: "work_with_me"
+        file: "src/content/work-with-me.json"
+        fields:
+          - { label: "Hero Tag", name: "hero_tag", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - { label: "Container Heading", name: "container_heading", widget: "string" }
+          - { label: "Container — Paragraph 1", name: "container_para1", widget: "text" }
+          - { label: "Container — Paragraph 2", name: "container_para2", widget: "text" }
+          - { label: "Container — Paragraph 3", name: "container_para3", widget: "text" }
+          - { label: "Duration", name: "duration", widget: "string" }
+          - { label: "Sessions", name: "sessions", widget: "string" }
+          - { label: "Session Length", name: "length", widget: "string" }
+          - { label: "Format", name: "format", widget: "string" }
+          - label: "Three Pillars"
+            name: "pillars"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Tools"
+                name: "tools"
+                widget: "list"
+                field: { label: "Tool", name: "tool", widget: "string" }
+          - { label: "Is This For You — Intro", name: "for_heading", widget: "text" }
+          - label: "Is This For You — Items"
+            name: "for_items"
+            widget: "list"
+            field: { label: "Item", name: "item", widget: "string" }
+          - { label: "Booking Section Description", name: "booking_description", widget: "text" }
+
+      - label: "Products"
+        name: "products"
+        file: "src/content/products.json"
+        fields:
+          - { label: "Hero Description", name: "hero_description", widget: "text" }
+          - label: "How It Works Steps"
+            name: "how_it_works"
+            widget: "list"
+            field: { label: "Step", name: "step", widget: "string" }
+          - label: "Products"
+            name: "products"
+            widget: "list"
+            fields:
+              - { label: "Program Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Paragraph 1", name: "para1", widget: "text" }
+              - { label: "Paragraph 2", name: "para2", widget: "text" }
+              - label: "Includes"
+                name: "includes"
+                widget: "list"
+                field: { label: "Item", name: "item", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+              - { label: "Buy URL", name: "buy_url", widget: "string" }
+              - { label: "Featured (highlighted border)", name: "featured", widget: "boolean", default: false }
+
+      - label: "Events"
+        name: "events"
+        file: "src/content/events.json"
+        fields:
+          - { label: "Contact Email", name: "contact_email", widget: "string" }
+          - { label: "Upcoming Events Text", name: "upcoming_text", widget: "text" }
+          - label: "Offerings"
+            name: "offerings"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Private Events — Paragraph 1", name: "private_para1", widget: "text" }
+          - { label: "Private Events — Paragraph 2", name: "private_para2", widget: "text" }
+          - { label: "Past Events Count", name: "past_count", widget: "string" }
+          - { label: "Past Events Label", name: "past_label", widget: "string" }
+          - label: "Past Event Names"
+            name: "past_events"
+            widget: "list"
+            field: { label: "Event Name", name: "name", widget: "string" }
+
+  # ── Classes ───────────────────────────────────────────────────
   - name: "classes"
     label: "Classes"
     folder: "src/content/classes"
@@ -67,18 +158,45 @@ collections:
       - { label: "Type", name: "type", widget: "select", options: ["class", "combo"], default: "class" }
       - { label: "Display Order", name: "order", widget: "number", default: 1, required: false }
       - { label: "Title", name: "title", widget: "string", required: false }
-      - { label: "Tag Line", name: "tag", widget: "string", required: false, hint: "e.g. Tuesday Evenings" }
-      - { label: "Schedule", name: "schedule", widget: "string", required: false, hint: "e.g. Tuesdays · 6:00–7:15 PM CST" }
-      - { label: "Format", name: "format", widget: "string", required: false, hint: "e.g. Live Zoom" }
-      - { label: "First Paragraph", name: "para1", widget: "text", required: false }
-      - { label: "Second Paragraph", name: "para2", widget: "text", required: false }
-      - { label: "Drop-in Price", name: "drop_in_price", widget: "string", required: false, hint: "Leave blank if not offered" }
+      - { label: "Tag Line", name: "tag", widget: "string", required: false }
+      - { label: "Schedule", name: "schedule", widget: "string", required: false }
+      - { label: "Format", name: "format", widget: "string", required: false }
+      - { label: "Paragraph 1", name: "para1", widget: "text", required: false }
+      - { label: "Paragraph 2", name: "para2", widget: "text", required: false }
+      - { label: "Drop-in Price", name: "drop_in_price", widget: "string", required: false }
       - { label: "Monthly Price", name: "monthly_price", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image", required: false }
-      - { label: "Image Position", name: "image_position", widget: "string", required: false, default: "center", hint: "e.g. center top, center 30%" }
+      - { label: "Image Position", name: "image_position", widget: "string", required: false, default: "center" }
       - { label: "Enroll Button URL", name: "enroll_url", widget: "string", required: false, default: "#" }
       - { label: "Layout", name: "layout", widget: "select", options: ["normal", "reverse"], default: "normal", required: false }
       - { label: "Combo Description", name: "description", widget: "text", required: false }
       - { label: "Combo Price", name: "price", widget: "string", required: false }
       - { label: "Combo Price Period", name: "price_period", widget: "string", required: false, default: "/ month" }
       - { label: "Savings Text", name: "save_text", widget: "string", required: false }
+
+  # ── Testimonials ─────────────────────────────────────────────
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Client Name", name: "name", widget: "string" }
+      - { label: "Role / Session Type", name: "role", widget: "string" }
+      - { label: "Display Order", name: "order", widget: "number", default: 0 }
+      - { label: "Full Width Card", name: "full_width", widget: "boolean", default: false, hint: "Spans both columns on testimonials page" }
+      - { label: "Testimonial Text", name: "body", widget: "markdown" }
+
+  # ── Sessions (legacy) ────────────────────────────────────────
+  - name: "sessions"
+    label: "Sessions"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Duration", name: "duration", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false }
+      - { label: "Order", name: "order", widget: "number", default: 0 }
