@@ -1,7 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import { getCollection, render } from 'astro:content';
 const CALENDLY = 'https://calendly.com/annawootenofficial';
+
+const entries = await getCollection('testimonials');
+const sorted = entries.sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0));
+const rendered = await Promise.all(
+  sorted.map(async (entry) => {
+    const { Content } = await render(entry);
+    return { entry, Content };
+  })
+);
 ---
 
 <BaseLayout title="Client Testimonials — Anna Wooten">
@@ -28,77 +37,16 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   <section class="testimonials-full">
     <div class="container">
       <div class="t-grid">
-
-        <div class="tf-card">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>Anna's sound healing and breathwork session was an absolute delight. She created a safe and nurturing space for each individual, allowing them to explore their inner selves. Before the sound bath, Anna guided us into a beautiful meditation, and she even incorporated breathwork into the session. While the breathwork was intense at times, it was an incredibly liberating experience.</p>
-          <p>One of my favorite moments during the session was when we all expressed ourselves through dance. It was a powerful way to release worries and connect with my true essence.</p>
-          <p>Overall, I highly recommend Anna's sessions to anyone seeking a spiritual journey or simply looking to relax and be present. I'm already planning to attend more classes in the future!</p>
-          <div class="tf-author">
-            <span class="tf-name">Bri Bri Way</span>
-            <span class="tf-role">Sound Healing &amp; Breathwork</span>
+        {rendered.map(({ entry, Content }) => (
+          <div class={`tf-card${entry.data.full_width ? ' tf-card--full' : ''}`}>
+            <div class="tf-quote-mark">&#8220;</div>
+            <Content />
+            <div class="tf-author">
+              <span class="tf-name">{entry.data.name}</span>
+              <span class="tf-role">{entry.data.role}</span>
+            </div>
           </div>
-        </div>
-
-        <div class="tf-card">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>Anna is a true healer. She is an intuitive soul who understands people's needs and tailors her services accordingly. I've attended her Surrendered classes, and they are truly that: a surrender. They are cathartic and healing and even uplifting in their own way. I always walk away feeling lighter after a class.</p>
-          <p>I have also enjoyed Anna's sound bath therapy, which always feels relaxing and rejuvenating. In a time of so much change and discontent in the world, Anna is a true balm for the soul. I am so grateful that Anna is able to bring her kindness, authenticity, and soothing presence to NWA when we need it most. Thank you, Anna!</p>
-          <div class="tf-author">
-            <span class="tf-name">Meredith C.</span>
-            <span class="tf-role">Surrendered Classes &amp; Sound Bath</span>
-          </div>
-        </div>
-
-        <div class="tf-card">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>Spending time in Anna's breathwork, Reiki, and sound healing sessions feels like stepping into a little pocket of magic where everything softens and opens up. She's so intuitive, warm, and kind, with this bright, calming presence that instantly puts you at ease.</p>
-          <p>You can tell she's incredibly smart and well-versed in multiple healing techniques, but what really stands out is how naturally skilled she is at weaving them together to create an open, safe space where you feel completely cared for. Every session brings a deep sense of relaxation and rejuvenation, as if your whole system got a gentle reset. It's more than just a service; it's a full spiritual experience, and Anna truly feels like an angel whose mission is to help others learn how to heal themselves and carry that beautiful energy back into their everyday lives.</p>
-          <div class="tf-author">
-            <span class="tf-name">Caroline Johnson-Stephens</span>
-            <span class="tf-role">Casting Director &bull; Breathwork, Reiki &amp; Sound Healing</span>
-          </div>
-        </div>
-
-        <div class="tf-card">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>I've attended two of Anna's breathwork and sound bath sessions. Anna is a wonderful guide and her sessions help release pent-up nervous tension. Her visualizations leave me knowing more about myself and feeling more confident in my day to day life.</p>
-          <p>I track my heart rate, and I have a chronically low heart rate variability (HRV), which is a sign of sympathetic nervous system activation. After her breathwork sessions, my HRV was boosted for up to a month afterwards. I can't wait to attend the next one!</p>
-          <div class="tf-author">
-            <span class="tf-name">Chloe Hiley</span>
-            <span class="tf-role">Breathwork &amp; Sound Bath</span>
-          </div>
-        </div>
-
-        <div class="tf-card">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>Anna held a private healing session in our home for my husband and I's wedding anniversary and it was truly one of the most tranquil, impactful and meaningful experiences we have ever had. She customized our session with breathwork, Reiki and the most soothing sound bath. My husband and I both felt safe, held and nourished throughout the experience.</p>
-          <p>Afterwards, we were restored, more connected to each other and felt a deep sense of peace. Anna has a treasure chest full of gifts. She is not only wildly gifted in various healing modalities; she is also professional, timely, exudes confidence and communicates thoroughly which is a rare combination. If you are seeking healing, connection with someone you love, stress relief and a special, one-of-a-kind experience, I would highly recommend investing in a private session with Anna.</p>
-          <div class="tf-author">
-            <span class="tf-name">Amanda Cupp</span>
-            <span class="tf-role">Private Healing Session</span>
-          </div>
-        </div>
-
-        <div class="tf-card">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>Anna does a wonderful job hosting and facilitating breathwork and sound bath events. I've been to many of such events and I never come away disappointed or regret the decision. The events are well structured and I enjoy not having any expectations of myself or my participation. I can go to one even in my most introverted/closed off states and leave feeling relaxed, centered, and sociable.</p>
-          <p>As a facilitator, Anna does very well creating a safe space to allow personal healing. Anna is talented with the singing bowls, and she also has a great voice for guided meditations and singing. Very calm, hypnotic, and gentle. I feel very taken care of in the space and it makes it easy for me to let go and let my body have the experience it needs to re-center. Recommend for anyone who needs a break from the stress of the day-to-day grind, recovering from burnout, or is going through a difficult stretch of life. Anna values the power and connection of a group ceremony and it shows.</p>
-          <div class="tf-author">
-            <span class="tf-name">William Ireland</span>
-            <span class="tf-role">Breathwork &amp; Sound Bath</span>
-          </div>
-        </div>
-
-        <div class="tf-card tf-card--full">
-          <div class="tf-quote-mark">&#8220;</div>
-          <p>I came to Anna during one of the more difficult seasons of my life. Through Reiki, somatic work, and hypnosis, I experienced a profound shift -- not just in how I felt, but in how I relate to myself. Her presence is gentle and grounding, and the work is genuinely transformative. I'll be coming back to Anna again and again. She opened a whole new world for me which resulted in a huge transformation and bigger happiness.</p>
-          <div class="tf-author">
-            <span class="tf-name">Tamara</span>
-            <span class="tf-role">Reiki, Somatic Work &amp; Hypnosis</span>
-          </div>
-        </div>
-
+        ))}
       </div>
 
       <div class="back-link">
