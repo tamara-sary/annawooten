@@ -24,4 +24,14 @@ const classes = defineCollection({
   }),
 });
 
-export const collections = { classes };
+const testimonials = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    order: z.number().default(0),
+    full_width: z.boolean().default(false),
+  }),
+});
+
+export const collections = { classes, testimonials };
