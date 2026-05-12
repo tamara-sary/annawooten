@@ -25,16 +25,16 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   <!-- Upcoming -->
   <section class="ev-section">
     <div class="container">
-      <p class="section-tag">Upcoming</p>
-      <h2>Events &amp; Experiences</h2>
-      <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
       <div class="ev-coming-wrap">
         <div class="ev-coming">
+          <p class="section-tag">Upcoming</p>
+          <h2>Events &amp; Experiences</h2>
+          <div class="divider"><span></span><span class="diamond">&#10022;</span><span></span></div>
           <p>{ev.upcoming_text}</p>
           <a href={`mailto:${ev.contact_email}?subject=Events Inquiry`} class="btn btn-gold">Inquire About Upcoming Events</a>
         </div>
         <div class="ev-photo">
-          <img src="/events-photo.jpg" alt="Anna Wooten events" />
+          <img src="/events-photo.jpg" alt="Anna Wooten retreat gathering" />
         </div>
       </div>
     </div>
@@ -92,9 +92,10 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   .ev-section h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.25rem; }
   .ev-section p { color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
 
-  .ev-coming-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-  .ev-coming p { margin-bottom: 2rem; }
-  .ev-photo img { width: 100%; border-radius: 16px; object-fit: cover; aspect-ratio: 1 / 1; }
+  .ev-coming-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .ev-coming .divider { margin-bottom: 1.5rem; }
+  .ev-coming p:not(.section-tag) { margin-bottom: 2rem; }
+  .ev-photo img { width: 100%; border-radius: 16px; object-fit: cover; display: block; }
 
   .offerings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .offering-card { padding: 2rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--card); }
@@ -114,8 +115,7 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   @media (max-width: 900px) {
     .offerings-grid { grid-template-columns: 1fr 1fr; }
     .private-inner { grid-template-columns: 1fr; }
-    .ev-coming-wrap { grid-template-columns: 1fr; }
-    .ev-photo { order: -1; }
+    .ev-coming-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
   }
   @media (max-width: 768px) {
     .ev-section { padding: 5rem 0; }
