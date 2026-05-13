@@ -63,10 +63,12 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
       <div class="modality-cards">
         {about.modalities.map((m: any) => (
           <div class="mod-card">
-            <h3>{m.title}</h3>
-            <p>{m.description}</p>
-            <div class="benefits">
-              {m.benefits.map((b: string) => <span>{b}</span>)}
+            <div class="mod-img">
+              <img src={m.image} alt={m.title} />
+            </div>
+            <div class="mod-body">
+              <h3>{m.title}</h3>
+              <p>{m.description}</p>
             </div>
           </div>
         ))}
@@ -108,11 +110,13 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
 
   .about-modalities { padding: 7rem 0; }
   .modality-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .mod-card { padding: 2.2rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); }
-  .mod-card h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); margin-bottom: 1rem; }
-  .mod-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
-  .benefits { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-  .benefits span { padding: 0.25rem 0.7rem; border: 1px solid rgba(232,150,10,0.2); border-radius: 9999px; font-size: 0.72rem; color: var(--gold); }
+  .mod-card { border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); overflow: hidden; display: flex; flex-direction: column; }
+  .mod-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
+  .mod-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+  .mod-card:hover .mod-img img { transform: scale(1.04); }
+  .mod-body { padding: 1.8rem 2rem 2rem; }
+  .mod-card h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); margin-bottom: 0.8rem; }
+  .mod-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
 
   .about-cta { padding: 8rem 0; text-align: center; }
   .cta-text { color: var(--muted); max-width: 440px; margin: 0 auto 2.5rem; line-height: 1.85; }
