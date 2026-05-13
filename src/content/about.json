@@ -1,6 +1,6 @@
 {
   "photo": "/anna.jpg",
-  "bio_para1": "Anna Wooten is an integrative practitioner, coach, and facilitator who works at the intersection of the nervous system, the subconscious mind, and personal transformation. Her work focuses on helping individuals understand the deeper patterns that shape their beliefs, emotional responses, and behaviors — and supporting them in creating meaningful internal change.",
+  "bio_para1": "Anna Wooten is an integrative practitioner, coach, and facilitator who works at the intersection of the nervous system, the subconscious mind, and personal transformation. Her work focuses on helping individuals understand the deeper patterns that shape their beliefs, emotional responses, and behaviors \u2014 and supporting them in creating meaningful internal change.",
   "bio_para2": "Her approach integrates breathwork, hypnosis, meditation, somatic practices, and intuitive guidance to help clients access the subconscious layers of the mind where many long-standing patterns are formed.",
   "bio_para3": "Anna is currently a graduate student in Clinical Mental Health Counseling at Naropa University, a program known for integrating contemplative psychology, mindfulness, and body-based approaches to healing.",
   "credentials": [
@@ -15,68 +15,38 @@
   "story_para1": "By most definitions, I was successful. I did well in school, built a career, ran a technology company, and created the life many people aim for. From the outside everything looked good. Inside, I felt disconnected from my body and from any real sense of joy or meaning.",
   "story_para2": "When my health began to break down through autoimmune challenges, I started searching for answers. My hair was falling out, my cycle stopped, and I knew something deeper was happening in my body. Rather than accepting that something was \"wrong\" with me, I began exploring nutrition, emotional healing, meditation, and spiritual practice.",
   "story_para3": "What began as a desire to feel better slowly became a devotion to understanding myself. Through deep personal work, I learned to listen to my body, face difficult emotions, and reconnect with a deeper inner wisdom that had always been present beneath the noise of fear and conditioning.",
-  "story_para4": "My path eventually led me through profound life changes — moving across the country, ending my marriage, and committing to a deeper exploration of healing practices. Over time, the combination of meditation, hypnosis, Reiki, sound healing, and intentional self-reflection helped me experience real transformation.",
+  "story_para4": "My path eventually led me through profound life changes \u2014 moving across the country, ending my marriage, and committing to a deeper exploration of healing practices. Over time, the combination of meditation, hypnosis, Reiki, sound healing, and intentional self-reflection helped me experience real transformation.",
   "story_para5": "Today I support others in their own process of reconnection and self-understanding. My work integrates both scientific and spiritual perspectives because both were essential in my own healing. I believe that when we care for our physical body, listen to our emotions, and reconnect with our deeper self, we move toward a more natural state of health and alignment.",
   "modalities": [
     {
       "title": "Hypnosis",
-      "description": "A focused, relaxed state of awareness where the subconscious mind becomes more accessible. We work directly with internal patterns, beliefs, and emotional imprints at a deeper level than conscious thought alone. You remain aware and in control throughout.",
-      "benefits": [
-        "Subconscious pattern access",
-        "Belief repatterning",
-        "Deeper internal shifts",
-        "Greater clarity"
-      ]
+      "image": "/mod-hypnosis.jpeg",
+      "description": "A focused, relaxed state of awareness where the subconscious mind becomes more accessible. We work directly with internal patterns, beliefs, and emotional imprints at a deeper level than conscious thought alone. You remain aware and in control throughout."
     },
     {
       "title": "Breathwork",
-      "description": "A guided somatic practice using intentional breathing patterns to access deeper layers of the nervous system and subconscious. Trained in Biodynamic Breathwork, which combines conscious connected breathing with body awareness to support emotional processing.",
-      "benefits": [
-        "Nervous system regulation",
-        "Release of stored tension",
-        "Emotional integration",
-        "Body awareness"
-      ]
+      "image": "/mod-breathwork.jpeg",
+      "description": "A guided somatic practice using intentional breathing patterns to access deeper layers of the nervous system and subconscious. Trained in Biodynamic Breathwork, which combines conscious connected breathing with body awareness to support emotional processing."
     },
     {
       "title": "Sound Healing",
-      "description": "A meditative practice using vibration and tone — crystal singing bowls and resonant instruments — to support relaxation and nervous system regulation. Creates sustained frequencies the body naturally responds to, encouraging deep calm and receptivity.",
-      "benefits": [
-        "Deep relaxation",
-        "Stress reduction",
-        "Present-moment awareness",
-        "Restorative experience"
-      ]
+      "image": "/mod-sound.jpeg",
+      "description": "A meditative practice using vibration and tone \u2014 crystal singing bowls and resonant instruments \u2014 to support relaxation and nervous system regulation. Creates sustained frequencies the body naturally responds to, encouraging deep calm and receptivity."
     },
     {
       "title": "Reiki",
-      "description": "An energy healing practice working with the body's natural energetic system to support balance and restoration. Offered in person or at a distance, through light touch or hands placed just above the body. Subtle, non-invasive, and deeply calming.",
-      "benefits": [
-        "Nervous system regulation",
-        "Energetic balance",
-        "Deep relaxation",
-        "Integration support"
-      ]
+      "image": "/mod-reiki.jpeg",
+      "description": "An energy healing practice working with the body's natural energetic system to support balance and restoration. Offered in person or at a distance, through light touch or hands placed just above the body. Subtle, non-invasive, and deeply calming."
     },
     {
       "title": "Meditation",
-      "description": "Structured and intentional — including both mindfulness-based meditation and guided visualization. Mindfulness strengthens present-moment awareness; visualization engages internal imagery to support clarity, alignment, and intentional growth.",
-      "benefits": [
-        "Self-awareness",
-        "Emotional regulation",
-        "Mental clarity",
-        "Intuition"
-      ]
+      "image": "/mod-meditation.jpeg",
+      "description": "Structured and intentional \u2014 including both mindfulness-based meditation and guided visualization. Mindfulness strengthens present-moment awareness; visualization engages internal imagery to support clarity, alignment, and intentional growth."
     },
     {
       "title": "Spiritual Guidance",
-      "description": "Offered as a form of reflective spiritual guidance in a focused, meditative state. Rather than predicting the future, the process explores patterns, themes, and questions present in your life — providing perspective and space to reflect from a broader viewpoint.",
-      "benefits": [
-        "Expanded perspective",
-        "Pattern clarity",
-        "Intuitive connection",
-        "Spiritual exploration"
-      ]
+      "image": "/mod-spiritual.jpeg",
+      "description": "Offered as a form of reflective spiritual guidance in a focused, meditative state. Rather than predicting the future, the process explores patterns, themes, and questions present in your life \u2014 providing perspective and space to reflect from a broader viewpoint."
     }
   ]
 }
