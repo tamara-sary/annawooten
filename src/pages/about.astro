@@ -16,7 +16,6 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     <a href="#" onclick={`Calendly.initPopupWidget({url: '${CALENDLY}'});return false;`} class="nav-cta">Book a Consultation</a>
   </nav>
 
-  <!-- Bio -->
   <section class="about-bio">
     <div class="container">
       <div class="bio-grid">
@@ -38,7 +37,6 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     </div>
   </section>
 
-  <!-- Story -->
   <section class="about-story">
     <div class="container">
       <p class="section-tag">My Story</p>
@@ -54,7 +52,6 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     </div>
   </section>
 
-  <!-- Modalities -->
   <section class="about-modalities">
     <div class="container">
       <p class="section-tag center">The Tools</p>
@@ -63,8 +60,8 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
       <div class="modality-cards">
         {about.modalities.map((m: any) => (
           <div class="mod-card">
-            <div class={`mod-img${m.image_fit === 'contain' ? ' mod-img-contain' : ''}`}>
-              <img src={m.image} alt={m.title} style={`object-fit: ${m.image_fit ?? 'cover'};`} />
+            <div class="mod-img" style={`aspect-ratio: ${m.image_aspect ?? '4/3'};`}>
+              <img src={m.image} alt={m.title} />
             </div>
             <div class="mod-body">
               <h3>{m.title}</h3>
@@ -76,7 +73,6 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="about-cta">
     <div class="container">
       <p class="section-tag center">Work Together</p>
@@ -111,10 +107,8 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   .about-modalities { padding: 7rem 0; }
   .modality-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .mod-card { border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); overflow: hidden; display: flex; flex-direction: column; }
-  .mod-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: #0d0a1e; }
+  .mod-img { width: 100%; overflow: hidden; }
   .mod-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
-  .mod-img-contain { display: flex; align-items: center; justify-content: center; }
-  .mod-img-contain img { object-fit: contain; }
   .mod-card:hover .mod-img img { transform: scale(1.04); }
   .mod-body { padding: 1.8rem 2rem 2rem; }
   .mod-card h3 { font-family: var(--font-display); font-size: 1.6rem; color: var(--text); margin-bottom: 0.8rem; }
