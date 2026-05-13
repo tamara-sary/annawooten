@@ -107,13 +107,13 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
   .detail-value { font-family: var(--font-display); font-size: 1.4rem; color: var(--text); }
 
   .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-  .pillar-full { padding: 2.5rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); }
+  .pillar-full { padding: 2.5rem; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); display: flex; flex-direction: column; }
   .pillar-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.2rem; }
   .pillar-num { font-family: var(--font-display); font-size: 2rem; color: var(--gold); opacity: 0.6; }
   .pillar-full h3 { font-size: 1.5rem; color: var(--text); }
-  .pillar-full p { color: var(--muted); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; }
-  .tool-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-  .tool-chips span { padding: 0.3rem 0.9rem; border: 1px solid var(--border); border-radius: 9999px; font-size: 0.75rem; color: var(--gold); letter-spacing: 0.06em; }
+  .pillar-full p { color: var(--muted); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; flex: 1; }
+  .tool-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: auto; }
+  .tool-chips span { padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.72rem; color: rgba(232,150,10,0.8); letter-spacing: 0.08em; background: rgba(232,150,10,0.1); }
 
   .wm-for { max-width: 720px; }
   .wm-for h2 { font-size: clamp(1.6rem, 2.5vw, 2rem); color: var(--muted); font-family: var(--font-display); font-weight: 300; font-style: italic; margin: 1.5rem 0 2.5rem; line-height: 1.5; }
@@ -135,3 +135,4 @@ const CALENDLY = 'https://calendly.com/annawootenofficial';
     .calendly-inline-widget { height: 420px !important; min-width: unset !important; }
   }
 </style>
+
