@@ -21,31 +21,37 @@
     {
       "title": "Hypnosis",
       "image": "/mod-hypnosis.jpeg",
+      "image_fit": "contain",
       "description": "A focused, relaxed state of awareness where the subconscious mind becomes more accessible. We work directly with internal patterns, beliefs, and emotional imprints at a deeper level than conscious thought alone. You remain aware and in control throughout."
     },
     {
       "title": "Breathwork",
       "image": "/mod-breathwork.jpeg",
+      "image_fit": "cover",
       "description": "A guided somatic practice using intentional breathing patterns to access deeper layers of the nervous system and subconscious. Trained in Biodynamic Breathwork, which combines conscious connected breathing with body awareness to support emotional processing."
     },
     {
       "title": "Sound Healing",
       "image": "/mod-sound.jpeg",
+      "image_fit": "contain",
       "description": "A meditative practice using vibration and tone \u2014 crystal singing bowls and resonant instruments \u2014 to support relaxation and nervous system regulation. Creates sustained frequencies the body naturally responds to, encouraging deep calm and receptivity."
     },
     {
       "title": "Reiki",
       "image": "/mod-reiki.jpeg",
+      "image_fit": "cover",
       "description": "An energy healing practice working with the body's natural energetic system to support balance and restoration. Offered in person or at a distance, through light touch or hands placed just above the body. Subtle, non-invasive, and deeply calming."
     },
     {
       "title": "Meditation",
       "image": "/mod-meditation.jpeg",
+      "image_fit": "cover",
       "description": "Structured and intentional \u2014 including both mindfulness-based meditation and guided visualization. Mindfulness strengthens present-moment awareness; visualization engages internal imagery to support clarity, alignment, and intentional growth."
     },
     {
       "title": "Spiritual Guidance",
       "image": "/mod-spiritual.jpeg",
+      "image_fit": "cover",
       "description": "Offered as a form of reflective spiritual guidance in a focused, meditative state. Rather than predicting the future, the process explores patterns, themes, and questions present in your life \u2014 providing perspective and space to reflect from a broader viewpoint."
     }
   ]
